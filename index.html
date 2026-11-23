@@ -13,8 +13,8 @@
 <x-dc>
 <helmet>
 <style>
-@font-face{font-family:'GenSen M';src:url(./assets/2c1da59d3fac229bf86b05107cba6511.woff) format('woff');font-display:swap}
-@font-face{font-family:'GenSen B';src:url(./assets/bc978a92f889d2a68d4beabfb690c31d.woff) format('woff');font-display:swap}
+@font-face{font-family:'GenSen M';src:url(./assets/2c1da59d3fac229bf86b05107cba6511.woff) format('woff');font-display:block}
+@font-face{font-family:'GenSen B';src:url(./assets/bc978a92f889d2a68d4beabfb690c31d.woff) format('woff');font-display:block}
 body{margin:0;background:var(--Maincolor,#0000ff);font-family:'GenSen M','Gen Sen Rounded2TW M','Noto Sans TC',sans-serif;color:#fff}
 a{color:#fff}a:hover{color:#FA8CC2}
 *{box-sizing:border-box}
@@ -809,10 +809,18 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     ['cvBox'].forEach((k) => { this[k] = React.createRef(); });
-    this.state = { screen: 'intro', name: '', q: '', cat: 9, v: 0, t: 0, phase: 'A', done: false, aboutOpen: false, pickN: 0, hoverBeads: false, nameErr: false, fan: 4.5, veil: false, veilColor: '#0000FF', chip: -1, cStep: 0, lidGrab: false, hinting: false, zp: 0, zoomIn: null, zoomFade: false, fp: 0, g2: false, g3: false };
+    this.state = { screen: 'intro', name: '', q: '', cat: 9, v: 0, t: 0, phase: 'A', done: false, aboutOpen: false, pickN: 0, hoverBeads: false, nameErr: false, fan: 4.5, veil: false, veilColor: '#0000FF', chip: -1, cStep: 0, lidGrab: false, hinting: false, zp: 0, zoomIn: null, zoomFade: false, fp: 0, g2: false, g3: false, fontsOk: false };
   }
   componentDidMount() {
     this._pre = [];
+    // build the 3D rings only after GenSen has loaded, so glyphs never swap (and shift) while the ring is on screen
+    const fontsOk = () => { if (!this.state.fontsOk) this.setState({ fontsOk: true }); };
+    const fs = typeof document !== 'undefined' && document.fonts;
+    if (fs && fs.load) {
+      Promise.all([fs.load("40px 'GenSen M'", '你ㄟ名字問我'), fs.load("40px 'GenSen B'", '金日事宜')])
+        .then(() => fs.ready).then(fontsOk, fontsOk);
+      setTimeout(fontsOk, 8000);
+    } else fontsOk();
     setTimeout(() => {
       const ids = ['./assets/9b886c49d0a6638bad17c770341636f1.webp', './assets/d529e2b8640392cc2fc50c728d30be0e.webp', './assets/746ea3f04adea5babfc98b9357d22392.webp', './assets/899fc7fbcd3673df96edffeb0e543f9f.webp', './assets/da052bcfa837b7f19a2e8181c8bd156e.jpg', './assets/a5fbe1532aa06929d6fccb1a4068f8a4.jpg', './assets/b8cfcf1e78f843733e4442d608b6ecfc.jpg', './assets/0744b6d2adfd853408c0bf7681763a50.webp', './assets/3d88449802f22e563bd8d3ec8eb2d37a.webp', './assets/c4f4469570e2575336e53745b12c7cbf.jpg', './assets/ee2e03b72b6fd0acbdfd130ee5924a6a.webp', './assets/7322b1af7d7c9a7423e365926f02a641.jpg']
         .concat(SQ.map((q) => q[0]), LOOSE.map((q) => q[0]), ENDC.map((q) => q[0]));
@@ -904,7 +912,7 @@ class Component extends DCLogic {
       isName: s.screen === 'name', isQuestion: s.screen === 'question', isSearch: s.screen === 'search',
       isSutra: s.screen === 'sutra', isInteract: s.screen === 'interact', isFortune: s.screen === 'fortune', isList: s.screen === 'list',
       skipIntro: () => go('name'),
-      mqTiles: [1, 2, 3, 4, 5, 6, 7, 8], nameTiles: NAME_TILES, askTiles: ASK_TILES, nameImgs: NAME_B.imgs, namePink: NAME_PINK, askRing: ASK_RING, askImgs: ASK_B.imgs, beads: BEADS, pieces: PIECE_TILES,
+      mqTiles: [1, 2, 3, 4, 5, 6, 7, 8], nameTiles: s.fontsOk ? NAME_TILES : [], askTiles: s.fontsOk ? ASK_TILES : [], nameImgs: s.fontsOk ? NAME_B.imgs : [], namePink: s.fontsOk ? NAME_PINK : [], askRing: s.fontsOk ? ASK_RING : [], askImgs: s.fontsOk ? ASK_B.imgs : [], beads: BEADS, pieces: PIECE_TILES,
       veilColor: s.veilColor, veilOp: s.veil ? 1 : 0,
       name: s.name, q: s.q, cur,
       nameInBg: s.name ? '#FFFFFF' : 'transparent', qInBg: s.q ? '#FFFFFF' : 'transparent',

@@ -1,0 +1,1013 @@
+<!doctype html>
+<meta charset="utf-8"><style data-dc-design-system-vars>@layer{:root{--Maincolor:#0000ff;}}</style>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>金日事宜 TODAY'S MATTER</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+<link rel="stylesheet" href="ds/design-system/tokens.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:'GenSen M';src:url(./assets/2c1da59d3fac229bf86b05107cba6511.woff) format('woff');font-display:swap}
+@font-face{font-family:'GenSen B';src:url(./assets/bc978a92f889d2a68d4beabfb690c31d.woff) format('woff');font-display:swap}
+body{margin:0;background:var(--Maincolor,#0000ff);font-family:'GenSen M','Gen Sen Rounded2TW M','Noto Sans TC',sans-serif;color:#fff}
+a{color:#fff}a:hover{color:#FA8CC2}
+*{box-sizing:border-box}
+button{font-family:inherit}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fx{position:absolute;display:block;opacity:0;pointer-events:none;will-change:transform,opacity}
+.fxw.on>.fx-line{animation:fxWipe 1s cubic-bezier(.2,.7,.2,1) var(--d) both}
+.fxw.on>.fx-rise{animation:fxRise .9s cubic-bezier(.25,1.4,.5,1) var(--d) both}
+.fxw.on>.fx-pop{animation:fxPop .8s cubic-bezier(.3,1.6,.5,1) var(--d) both}
+.fxw.on>.fx-bub{transform-origin:20% 90%;animation:fxPop .9s cubic-bezier(.3,1.5,.5,1) var(--d) both,fxBob 3.8s ease-in-out calc(var(--d) + .9s) infinite}
+.fxw.on>.fx-big{animation:fxBig 1.1s cubic-bezier(.25,1.35,.45,1) var(--d) both,fxFloat 5.2s ease-in-out calc(var(--d) + 1.1s + var(--f,0s)) infinite}
+@keyframes fxWipe{from{opacity:0;clip-path:inset(-10% 100% -10% 0);transform:translateX(-1cqw)}40%{opacity:1}to{opacity:1;clip-path:inset(-10% -2% -10% 0);transform:none}}
+@keyframes fxRise{from{opacity:0;transform:translateY(2.2cqw);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+@keyframes fxPop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+@keyframes fxBob{0%,100%{transform:none}50%{transform:translateY(-.7cqw) rotate(-1.2deg)}}
+@keyframes fxBig{0%{opacity:0;transform:translateY(7cqw)}55%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes fxFloat{0%,100%{transform:none}50%{transform:translateY(-1cqw)}}
+@media (prefers-reduced-motion: reduce){.fx{animation:none!important;opacity:1!important}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeOut{from{opacity:1}to{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes spinY{from{transform:rotateY(0deg)}to{transform:rotateY(360deg)}}
+@keyframes spinZ{from{transform:rotateZ(0deg)}to{transform:rotateZ(360deg)}}
+@keyframes mqUp{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@keyframes mqLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes unfold{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes ping{0%{transform:translate(-50%,-50%) scale(.6);opacity:.9}100%{transform:translate(-50%,-50%) scale(1.8);opacity:0}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes flipCard{0%{transform:translateY(10vh) scale(.72) rotateY(0deg)}38%{transform:translateY(-2vh) scale(1.02) rotateY(0deg)}55%{transform:translateY(0) scale(1) rotateY(0deg)}100%{transform:translateY(0) scale(1) rotateY(180deg)}}
+.scr{animation:rise .7s ease both}
+.ring3d{transform-style:preserve-3d;animation:spinY 34s linear infinite;will-change:transform}
+.mq{}
+.ringSpin{animation:spinZ 40s linear infinite}
+.mqDown{}
+.mqL{animation:mqLeft 30s linear infinite}
+.mqHomeUp{animation:mqUp 30s linear infinite;will-change:transform}
+.mqHomeDown{animation:mqUp 30s linear infinite reverse;will-change:transform}
+@media (prefers-reduced-motion: reduce){.mqHomeUp,.mqHomeDown{animation:none}}
+.spin{animation:spinZ 2.4s linear infinite}
+.spinSlow{animation:spinZ 14s linear infinite}
+@keyframes squish{0%{transform:scale(1,1) translate(0,0)}18%{transform:scale(1.055,.95) skewX(1.3deg) translate(-.5%,.4%)}38%{transform:scale(.95,1.05) skewX(-.9deg) translate(.4%,-.4%)}58%{transform:scale(1.04,.962) skewY(.9deg) translate(-.3%,-.2%)}78%{transform:scale(.97,1.03) skewX(.6deg) translate(.2%,.3%)}100%{transform:scale(1,1) translate(0,0)}}
+.squish{animation:squish 2.6s ease-in-out infinite}
+@keyframes squish2{0%,100%{transform:scale(1)}50%{transform:scale(1.018,.985)}}
+.squish2{animation:squish2 1.7s ease-in-out infinite}
+@keyframes zoomIn{0%{transform:scale(.03);border-radius:50%;opacity:0}12%{opacity:1}100%{transform:scale(1);border-radius:0;opacity:1}}
+.zoomIn{animation:zoomIn .85s cubic-bezier(.6,0,.25,1) both}
+.zoomOut{opacity:0;transition:opacity .6s ease}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.nudge{animation:nudge 1.4s ease-in-out infinite}
+@keyframes handHint{0%{transform:translate(0,0) rotate(-10deg);opacity:0}15%{opacity:1}55%{transform:translate(1.2cqw,-5cqw) rotate(-10deg);opacity:1}100%{transform:translate(1.2cqw,-5cqw) rotate(-10deg);opacity:0}}
+.handHint{animation:handHint 1.3s ease-in-out both}
+.blink{animation:blink 1.4s ease-in-out infinite}
+.unfold{animation:unfold 1.4s cubic-bezier(.2,.8,.2,1) both}
+.logo-strokes{animation:fadeOut .5s ease 2.87s forwards}
+@keyframes fallL{0%{transform:translateY(-120cqh) rotate(-12deg)}52%{transform:translateY(0) rotate(0deg) scale(1,1);animation-timing-function:ease-out}60%{transform:translateY(1.2cqh) scale(1.08,.86) rotate(1deg);animation-timing-function:ease-out}72%{transform:translateY(-4.5cqh) scale(.95,1.06) rotate(-1.5deg);animation-timing-function:ease-in}82%{transform:translateY(0) scale(1.04,.93)}89%{transform:translateY(-1.4cqh) scale(.99,1.02)}95%{transform:translateY(0) scale(1.01,.98)}100%{transform:none}}
+@keyframes fallR{0%{transform:translateY(-120cqh) rotate(11deg)}52%{transform:translateY(0) rotate(0deg) scale(1,1);animation-timing-function:ease-out}60%{transform:translateY(1.2cqh) scale(1.08,.86) rotate(-1deg);animation-timing-function:ease-out}72%{transform:translateY(-4.5cqh) scale(.95,1.06) rotate(1.5deg);animation-timing-function:ease-in}82%{transform:translateY(0) scale(1.04,.93)}89%{transform:translateY(-1.4cqh) scale(.99,1.02)}95%{transform:translateY(0) scale(1.01,.98)}100%{transform:none}}
+@keyframes rowL{0%{transform:translateY(-110cqh) rotate(-4deg);opacity:0;animation-timing-function:cubic-bezier(.35,0,.55,1)}12%{opacity:1}74%{transform:translateY(0) rotate(0deg);animation-timing-function:cubic-bezier(.3,0,.5,1)}86%{transform:translateY(-1.1cqh) rotate(-.4deg);animation-timing-function:cubic-bezier(.5,0,.7,1)}100%{transform:none;opacity:1}}
+@keyframes rowR{0%{transform:translateY(-110cqh) rotate(4deg);opacity:0;animation-timing-function:cubic-bezier(.35,0,.55,1)}12%{opacity:1}74%{transform:translateY(0) rotate(0deg);animation-timing-function:cubic-bezier(.3,0,.5,1)}86%{transform:translateY(-1.1cqh) rotate(.4deg);animation-timing-function:cubic-bezier(.5,0,.7,1)}100%{transform:none;opacity:1}}
+
+.hand{opacity:0;animation:handIn 1.9s ease var(--d) both}
+@keyframes handIn{0%{opacity:0;transform:translate(1.4cqw,-1.6cqh) scale(.9)}22%{opacity:1;transform:none}72%{opacity:1;transform:none}100%{opacity:0;transform:translate(-.6cqw,.8cqh)}}
+.flX{position:absolute;inset:0;animation:flX var(--du) cubic-bezier(.18,.62,.32,1) var(--d) both}
+.flY{position:absolute;inset:0;animation:flY var(--du) linear var(--d) both}
+.flS{animation:flS var(--du) linear var(--d) both;transform-origin:50% 85%}
+.flT{position:absolute;inset:0;animation:flT var(--du) linear var(--d) both}
+.flM{position:absolute;inset:0}
+@keyframes flX{from{transform:translateX(var(--sx))}to{transform:none}}
+@keyframes flY{0%{transform:translateY(var(--sy));animation-timing-function:cubic-bezier(.22,.62,.42,1)}34%{transform:translateY(var(--py));animation-timing-function:cubic-bezier(.55,0,.85,.45)}58%{transform:translateY(0);animation-timing-function:cubic-bezier(.18,.7,.4,1)}69%{transform:translateY(-9cqh);animation-timing-function:cubic-bezier(.6,0,.85,.45)}79%{transform:translateY(0);animation-timing-function:cubic-bezier(.18,.7,.4,1)}87%{transform:translateY(-3.4cqh);animation-timing-function:cubic-bezier(.6,0,.85,.45)}93%{transform:translateY(0);animation-timing-function:cubic-bezier(.2,.7,.4,1)}97%{transform:translateY(-.8cqh)}100%{transform:none}}
+@keyframes flS{0%{transform:rotate(var(--r)) scale(.45);opacity:0}5%{opacity:1}56%{transform:rotate(calc(var(--r) * -.12)) scale(1.04,.98)}60%{transform:scale(1.26,.72)}67%{transform:scale(.86,1.16)}75%{transform:scale(1.06,.95)}80%{transform:scale(1.14,.86)}86%{transform:scale(.94,1.07)}93%{transform:scale(1.05,.95)}100%{transform:none;opacity:1}}
+@keyframes flT{0%{opacity:0}5%{opacity:var(--to)}28%{opacity:var(--to)}40%{opacity:0}100%{opacity:0}}
+.flDrop{animation:flDrop 1.05s cubic-bezier(.5,0,.92,.55) var(--dd) both}
+@keyframes flDrop{0%{transform:none}12%{transform:translateY(-2cqh) rotate(calc(var(--dr) * -.2))}100%{transform:translateY(150cqh) rotate(var(--dr))}}
+.bX{position:absolute;inset:0;animation:bX 1.5s linear var(--d) both}
+.bY{position:absolute;inset:0;animation:bY 1.5s linear var(--d) both}
+.bS{animation:bS 1.5s linear var(--d) both;transform-origin:50% 100%}
+@keyframes bX{0%{transform:translateX(var(--hx))}38%{transform:translateX(var(--hx));animation-timing-function:cubic-bezier(.3,.4,.5,1)}100%{transform:none}}
+@keyframes bY{0%{transform:translateY(-95cqh);opacity:0;animation-timing-function:cubic-bezier(.5,0,.9,.5)}3%{opacity:1}38%{transform:translateY(0);animation-timing-function:cubic-bezier(.15,.7,.35,1)}55%{transform:translateY(var(--h1));animation-timing-function:cubic-bezier(.6,0,.88,.45)}72%{transform:translateY(0);animation-timing-function:cubic-bezier(.15,.7,.35,1)}82%{transform:translateY(var(--h2));animation-timing-function:cubic-bezier(.6,0,.88,.45)}91%{transform:translateY(0);animation-timing-function:cubic-bezier(.2,.7,.4,1)}96%{transform:translateY(-.6cqh)}100%{transform:none;opacity:1}}
+@keyframes bS{0%{transform:scale(.96,1.05) rotate(var(--r))}37%{transform:scale(.96,1.05) rotate(calc(var(--r) * .4))}40%{transform:scale(1.1,.9)}47%{transform:scale(.97,1.03)}70%{transform:scale(.99,1.01)}73%{transform:scale(1.05,.95)}80%{transform:scale(.99,1.01)}91%{transform:scale(1,1)}93%{transform:scale(1.02,.98)}100%{transform:none}}
+.boxFall{animation:boxFall 1.05s linear .38s both}
+@keyframes boxFall{0%{transform:none;animation-timing-function:cubic-bezier(.5,0,.9,.5)}62%{transform:translateX(-41%) rotate(3deg) scaleX(1);animation-timing-function:ease-out}70%{transform:translateX(-39.5%) rotate(1deg) scaleX(.9)}80%{transform:translateX(-41.5%) rotate(2deg) scaleX(1.03);animation-timing-function:ease-in-out}90%{transform:translateX(-40.4%) rotate(1.4deg) scaleX(.98)}100%{transform:translateX(-40.8%) rotate(1.6deg)}}
+.rpH{opacity:0;transition:opacity .5s ease}
+.rpS{opacity:1;transition:opacity .5s ease}
+.qkS{background-image:url(./assets/ca9c72c0533e3a470ac661912d9f4024.webp)}
+.qkM{background-image:url(./assets/952816cfbf6f51434bc59a57d8e6609f.webp)}
+.pkS{background-image:url(./assets/e54ce2c22f4847c8686cafd4c67920bb.webp)}
+.pkM{background-image:url(./assets/8ddc47c2bcc2aa29c3f7619063819788.webp)}
+.rpX,.rpQ{position:absolute;inset:0}
+.rpFall{animation:rpFall 1.35s linear var(--d) both}
+@keyframes rpFall{0%{transform:none;animation-timing-function:cubic-bezier(.42,0,.78,.62)}74%{transform:translateX(var(--dx));animation-timing-function:cubic-bezier(.25,.6,.45,1)}86%{transform:translateX(calc(var(--dx) + .15cqw));animation-timing-function:cubic-bezier(.5,0,.6,1)}100%{transform:translateX(var(--dx))}}
+.rpIdle{transform-origin:50% 50%;animation:rpIdle var(--p) ease-in-out var(--o) infinite alternate}
+.rpLand{transform-origin:20% 50%;animation:rpSq 1.35s linear var(--d) both,rpIdle var(--p) ease-in-out calc(var(--d) + 1.35s) infinite alternate}
+@keyframes rpIdle{0%{transform:scale(1.03,1.03)}50%{transform:scale(1,1.025)}100%{transform:scale(1.035,1.01)}}
+@keyframes rpSq{0%,70%{transform:none}78%{transform:scale(.93,1.05)}88%{transform:scale(1.05,1.02)}100%{transform:scale(1.03,1.03)}}
+.sqHide{opacity:0;visibility:hidden}
+.sqGo{animation:sqGo .38s cubic-bezier(.3,0,.7,1) both}
+@keyframes sqGo{0%{opacity:1;transform:none}35%{opacity:1;transform:translate(-3%,-10%) scale(1.08)}100%{opacity:0;transform:translate(-14%,-40%) scale(.7) rotate(-10deg)}}
+.donePop{animation:btnPop .5s cubic-bezier(.3,1.5,.5,1) both}
+@media (prefers-reduced-motion: reduce){.hand,.flX,.flY,.flS,.flT,.bX,.bY,.bS{animation-duration:.01s!important;animation-delay:0s!important}}
+@keyframes btnPop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+.rowL{animation:rowL 1.25s linear both;transform-origin:50% 100%;will-change:transform}
+.rowR{animation:rowR 1.25s linear both;transform-origin:50% 100%;will-change:transform}
+.fallL{animation:fallL 1.6s cubic-bezier(.55,0,.9,.6) both;transform-origin:50% 100%;will-change:transform}
+.fallR{animation:fallR 1.6s cubic-bezier(.55,0,.9,.6) both;transform-origin:50% 100%;will-change:transform}
+.enter{opacity:0;animation:fadeIn .5s ease 1.84s forwards, blink 2.2s ease-in-out 2.39s infinite}
+.veil{position:fixed;inset:0;z-index:50;pointer-events:none;transition:opacity .42s ease}
+.logo-solid{opacity:0;animation:fadeIn .5s ease 2.72s forwards}
+.ping{animation:ping 1.6s ease-out infinite}
+.hot,.hotB{transition:transform .25s cubic-bezier(.3,1.6,.5,1),filter .25s}
+.hot:hover,.hot:focus-visible,.hotB:hover,.hotB:focus-visible{transform:scale(1.1);outline:none}
+.hotI img{transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.hotI:hover img,.hotI:focus-visible img{transform:scale(1.12)}
+.hotI:focus-visible{outline:none}
+.chip-hot{color:transparent;background:transparent;transition:background .2s,color .2s;display:flex;align-items:center;justify-content:center;font-family:'GenSen M',sans-serif;font-size:1.32cqw;letter-spacing:.06em;white-space:nowrap;padding:0}
+.chip-hot:hover,.chip-hot:focus-visible,.chip-hot.on{background:#fff !important;color:var(--Maincolor,#0000ff);outline:none}
+.home-in:focus{outline:none}
+.fcard{transition:transform .35s ease, filter .35s ease}
+.fcard:hover,.fcard:focus-visible{transform:translateY(4vh) scale(1.05);filter:drop-shadow(0 18px 24px rgba(0,0,60,.45));outline:none}
+.flip3d{transform-style:preserve-3d;animation:flipCard 1.7s cubic-bezier(.3,.7,.2,1) .15s both}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:4.5%;overflow:hidden}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</helmet>
+
+<div style="position: relative; min-height: 100vh; width: 100%; overflow: hidden; background: {{bg}}; font-family: 'GenSen M', 'Noto Sans TC', sans-serif">
+
+<!-- ============ 00 進場：線條組成 logo ============ -->
+<sc-if value="{{isIntro}}" hint-placeholder-val="{{ true }}">
+<section style="position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6vh; background: var(--Maincolor, #0000ff)">
+  <div style="position: relative; width: min(62vw, 980px); aspect-ratio: 2367 / 942">
+    <svg viewBox="0 0 2367 942" role="img" aria-label="金日事宜 TODAY'S MATTER" style="position: absolute; inset: 0; width: 100%; height: 100%">
+      <defs>
+        <mask id="logoStrokeMask" maskUnits="userSpaceOnUse" x="0" y="0" width="2367" height="942">
+          <rect x="0" y="0" width="2367" height="942" fill="#000"></rect>
+          <path d="M341 4 C332 12 307 45 290 52 C273 59 262 44 240 44 C218 44 185 46 160 55 C135 64 111 82 92 100 C73 118 57 140 45 162 C33 184 24 213 22 232 C20 251 27 271 36 276 C45 281 59 275 78 262 C97 249 126 222 150 200 C174 178 195 154 220 130 C245 106 288 69 301 57" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:865 945;stroke-dashoffset:865;animation:draw 0.090s cubic-bezier(.45,0,.3,1) 0.120s forwards"></path>
+          <path d="M263 68 C274 75 310 96 330 112 C350 128 360 146 380 165 C400 184 418 205 450 225 C482 245 551 273 571 283" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:399 479;stroke-dashoffset:399;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.222s forwards"></path>
+          <path d="M159 278 L421 278" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:276 356;stroke-dashoffset:276;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.294s forwards"></path>
+          <path d="M66 388 L246 388" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:191 271;stroke-dashoffset:191;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.366s forwards"></path>
+          <path d="M332 389 L512 384" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:191 271;stroke-dashoffset:191;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.438s forwards"></path>
+          <path d="M288 276 L288 654" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:397 477;stroke-dashoffset:397;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.510s forwards"></path>
+          <path d="M139 473 L207 624" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:176 256;stroke-dashoffset:176;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.582s forwards"></path>
+          <path d="M447 467 L371 623" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:184 264;stroke-dashoffset:184;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.654s forwards"></path>
+          <path d="M36 690 L544 688" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:532 612;stroke-dashoffset:532;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.726s forwards"></path>
+          <path d="M680 4 L680 718" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:747 827;stroke-dashoffset:747;animation:draw 0.078s cubic-bezier(.45,0,.3,1) 0.426s forwards"></path>
+          <path d="M736 80 L1004 80" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:283 363;stroke-dashoffset:283;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.516s forwards"></path>
+          <path d="M1055 4 L1055 716" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:744 824;stroke-dashoffset:744;animation:draw 0.078s cubic-bezier(.45,0,.3,1) 0.588s forwards"></path>
+          <path d="M734 388 L1006 388" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:287 367;stroke-dashoffset:287;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.684s forwards"></path>
+          <path d="M736 692 L1004 692" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:283 363;stroke-dashoffset:283;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.756s forwards"></path>
+          <path d="M1174 78 L1731 75" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:583 663;stroke-dashoffset:583;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.606s forwards"></path>
+          <path d="M1258 144 L1258 331" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:198 278;stroke-dashoffset:198;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.678s forwards"></path>
+          <path d="M1304 183 L1601 183" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:313 393;stroke-dashoffset:313;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.750s forwards"></path>
+          <path d="M1645 144 L1645 331" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:198 278;stroke-dashoffset:198;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.822s forwards"></path>
+          <path d="M1304 287 L1601 287" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:313 393;stroke-dashoffset:313;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.894s forwards"></path>
+          <path d="M1224 392 C1257 392 1374 391 1420 389 C1466 387 1476 382 1500 381 C1524 380 1546 382 1565 386 C1584 390 1596 395 1615 404 C1634 413 1667 435 1677 441" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:490 570;stroke-dashoffset:490;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.966s forwards"></path>
+          <path d="M1170 477 L1748 475" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:605 685;stroke-dashoffset:605;animation:draw 0.066s cubic-bezier(.45,0,.3,1) 1.038s forwards"></path>
+          <path d="M1224 574 C1257 574 1374 574 1420 577 C1466 580 1476 593 1500 595 C1524 597 1545 595 1565 590 C1585 585 1601 578 1620 563 C1639 548 1668 513 1678 503" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:511 591;stroke-dashoffset:511;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 1.116s forwards"></path>
+          <path d="M1452 -4 C1452 106 1454 539 1452 655 C1450 771 1448 684 1440 692 C1432 700 1427 701 1405 702 C1383 703 1325 700 1309 699" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:868 948;stroke-dashoffset:868;animation:draw 0.090s cubic-bezier(.45,0,.3,1) 1.188s forwards"></path>
+          <path d="M2081 -8 L2081 70" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:85 165;stroke-dashoffset:85;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.918s forwards"></path>
+          <path d="M1879 223 C1870 212 1836 178 1826 160 C1816 142 1815 130 1818 118 C1821 106 1830 96 1845 88 C1860 80 1899 75 1910 72" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:246 326;stroke-dashoffset:246;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 0.990s forwards"></path>
+          <path d="M1859 77 C1930 77 2207 74 2285 77 C2363 80 2318 84 2328 92 C2338 100 2342 113 2342 125 C2342 137 2335 149 2325 165 C2315 181 2289 212 2282 221" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:650 730;stroke-dashoffset:650;animation:draw 0.072s cubic-bezier(.45,0,.3,1) 1.062s forwards"></path>
+          <path d="M1960 142 L1960 714" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:599 679;stroke-dashoffset:599;animation:draw 0.066s cubic-bezier(.45,0,.3,1) 1.140s forwards"></path>
+          <path d="M2208 142 L2208 714" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:599 679;stroke-dashoffset:599;animation:draw 0.066s cubic-bezier(.45,0,.3,1) 1.218s forwards"></path>
+          <path d="M2004 265 L2161 265" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:167 247;stroke-dashoffset:167;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 1.296s forwards"></path>
+          <path d="M2004 386 L2161 386" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:167 247;stroke-dashoffset:167;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 1.368s forwards"></path>
+          <path d="M2004 507 L2161 507" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:167 247;stroke-dashoffset:167;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 1.440s forwards"></path>
+          <path d="M1786 688 L2361 686" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:602 682;stroke-dashoffset:602;animation:draw 0.066s cubic-bezier(.45,0,.3,1) 1.512s forwards"></path>
+          <path d="M191 806 L217 789 L281 789" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:103 183;stroke-dashoffset:103;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.374s forwards"></path>
+          <path d="M264 772 L264 921 L254 941" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:182 262;stroke-dashoffset:182;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.380s forwards"></path>
+          <path d="M247 789 L314 789 L334 777" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:98 178;stroke-dashoffset:98;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.386s forwards"></path>
+          <path d="M368 897 L361 866 L361 849 L367 820 L376 806 L390 794 L408 787 L425 785 L451 788 L466 795 L480 809 L485 817 L490 832 L492 849 L490 876 L487 887 L480 901 L474 909 L465 916 L451 922 L434 925 L408 924 L395 920 L385 914 L372 901 L365 887 L362 861" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:497 577;stroke-dashoffset:497;animation:draw 0.072s cubic-bezier(.45,0,.3,1) 1.404s forwards"></path>
+          <path d="M661 841 L655 816 L649 805 L633 792 L616 787 L594 785 L554 787 L552 789 L552 923 L562 925 L611 924 L627 920 L641 912 L647 906 L655 892 L660 873 L661 844 L653 806" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:503 583;stroke-dashoffset:503;animation:draw 0.072s cubic-bezier(.45,0,.3,1) 1.434s forwards"></path>
+          <path d="M734 871 L714 888 L694 943" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:92 172;stroke-dashoffset:92;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.446s forwards"></path>
+          <path d="M708 869 L723 884 L773 884 L816 881" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:123 203;stroke-dashoffset:123;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.452s forwards"></path>
+          <path d="M719 899 L724 858 L748 791 L753 788 L764 786 L772 792 L796 858 L801 899" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:265 345;stroke-dashoffset:265;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.452s forwards"></path>
+          <path d="M785 872 L806 886 L819 924 L823 928 L855 944" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:115 195;stroke-dashoffset:115;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.458s forwards"></path>
+          <path d="M819 770 L853 785 L896 860 L923 875" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:165 245;stroke-dashoffset:165;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.464s forwards"></path>
+          <path d="M907 849 L907 921 L897 941" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:102 182;stroke-dashoffset:102;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.470s forwards"></path>
+          <path d="M994 770 L963 783 L960 786 L920 858 L893 876" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:163 243;stroke-dashoffset:163;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.476s forwards"></path>
+          <path d="M997 770 L1012 785 L1012 819 L1002 839" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:85 165;stroke-dashoffset:85;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.488s forwards"></path>
+          <path d="M1166 794 L1118 784 L1099 785 L1082 790 L1074 797 L1070 804 L1068 826 L1069 832 L1073 839 L1082 846 L1102 853 L1132 860 L1143 865 L1152 874 L1154 896 L1149 913 L1143 919 L1131 924 L1117 926 L1095 926 L1081 924 L1065 919 L1050 889" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:410 490;stroke-dashoffset:410;animation:draw 0.060s cubic-bezier(.45,0,.3,1) 1.500s forwards"></path>
+          <path d="M1310 787 L1287 795 L1283 799 L1273 925 L1255 934" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:188 268;stroke-dashoffset:188;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.524s forwards"></path>
+          <path d="M1279 784 L1304 799 L1307 803 L1340 906 L1365 923" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:183 263;stroke-dashoffset:183;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.530s forwards"></path>
+          <path d="M1336 924 L1362 904 L1393 803 L1397 798 L1410 792 L1417 798 L1429 924 L1447 942" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:337 417;stroke-dashoffset:337;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.542s forwards"></path>
+          <path d="M1512 870 L1494 888 L1481 925 L1473 931 L1450 939" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:107 187;stroke-dashoffset:107;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.554s forwards"></path>
+          <path d="M1498 900 L1503 860 L1527 793 L1533 788 L1544 786 L1551 790 L1576 858 L1581 899" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:266 346;stroke-dashoffset:266;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.560s forwards"></path>
+          <path d="M1482 883 L1553 884 L1596 881" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:123 203;stroke-dashoffset:123;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.560s forwards"></path>
+          <path d="M1566 870 L1586 887 L1600 926 L1635 944" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:115 195;stroke-dashoffset:115;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.566s forwards"></path>
+          <path d="M1625 809 L1656 793 L1715 793" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:102 182;stroke-dashoffset:102;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.578s forwards"></path>
+          <path d="M1698 776 L1698 917 L1686 937" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:175 255;stroke-dashoffset:175;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.584s forwards"></path>
+          <path d="M1681 793 L1744 793 L1767 778" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:98 178;stroke-dashoffset:98;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.584s forwards"></path>
+          <path d="M1783 805 L1812 791 L1871 791" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:99 179;stroke-dashoffset:99;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.596s forwards"></path>
+          <path d="M1854 774 L1854 913 L1843 935" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:174 254;stroke-dashoffset:174;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.602s forwards"></path>
+          <path d="M1837 791 L1900 791 L1921 777" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:96 176;stroke-dashoffset:96;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.608s forwards"></path>
+          <path d="M1964 872 L1965 788 L2034 788 L2057 775" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:191 271;stroke-dashoffset:191;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.626s forwards"></path>
+          <path d="M1964 838 L1965 923 L2037 923 L2057 913" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:191 271;stroke-dashoffset:191;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.626s forwards"></path>
+          <path d="M1947 855 L2031 855 L2054 842" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:119 199;stroke-dashoffset:119;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.626s forwards"></path>
+          <path d="M2088 852 L2088 919 L2076 943" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:102 182;stroke-dashoffset:102;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.638s forwards"></path>
+          <path d="M2071 868 L2164 872" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:101 181;stroke-dashoffset:101;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.638s forwards"></path>
+          <path d="M2088 886 L2089 788 L2091 786 L2104 785 L2137 785 L2154 788 L2161 791 L2172 803 L2175 817 L2174 837 L2169 852 L2163 859 L2153 864 L2134 883" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:301 381;stroke-dashoffset:301;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.644s forwards"></path>
+          <path d="M2144 854 L2149 884 L2152 890 L2175 925 L2179 928 L2208 935" style="fill:none;stroke:#fff;stroke-width:66;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:122 202;stroke-dashoffset:122;animation:draw 0.048s cubic-bezier(.45,0,.3,1) 1.644s forwards"></path>
+        </mask>
+      </defs>
+      <image href="./assets/6821fed8b09d756c8e8f1ba396e377aa.png" x="0" y="0" width="2367" height="942" mask="url(#logoStrokeMask)"></image>
+    </svg>
+  </div>
+  <p class="enter" style="margin: 0; font-family: 'GenSen M', sans-serif; font-size: clamp(13px, 1.1vw, 17px); letter-spacing: .4em; color: rgba(255,255,255,.85)">點擊進入　ENTER</p>
+  <button onClick="{{skipIntro}}" aria-label="點擊進入" style="position: absolute; inset: 0; background: transparent; border: 0; cursor: pointer"></button>
+</section>
+</sc-if>
+
+<!-- ============ 藍色畫面（名字／問題／檢索） ============ -->
+<sc-if value="{{showBlue}}" hint-placeholder-val="{{ false }}">
+<section style="position: relative; min-height: 100vh; width: 100%; background: var(--Maincolor, #0000ff); overflow: hidden; --S: min(100vw, 177.78vh); --E: clamp(6px, 1.1vw, 20px); --MW: calc(var(--S) * .044)">
+  <div aria-hidden="true" style="position: absolute; left: var(--E); top: 0; bottom: 0; width: var(--MW); overflow: hidden; z-index: 2">
+    <div class="mqHomeUp" style="display: flex; flex-direction: column">
+      <sc-for list="{{mqTiles}}" as="m" hint-placeholder-count="8"><img src="./assets/c0e4dbbb1749c5afadec5a734737048e.png" alt="" style="display: block; width: 100%; height: auto"></sc-for>
+    </div>
+  </div>
+  <div aria-hidden="true" style="position: absolute; right: var(--E); top: 0; bottom: 0; width: var(--MW); overflow: hidden; z-index: 2">
+    <div class="mqHomeDown" style="display: flex; flex-direction: column">
+      <sc-for list="{{mqTiles}}" as="m" hint-placeholder-count="8"><img src="./assets/609562ab63be5247a4f887b171096eae.png" alt="" style="display: block; width: 100%; height: auto"></sc-for>
+    </div>
+  </div>
+  <button onClick="{{goHome}}" aria-label="金日事宜｜回到首頁" class="hot" style="position: absolute; left: calc(var(--E) + var(--MW) + clamp(10px, 1.6vw, 28px)); top: clamp(14px, 3.4vh, 40px); width: calc(var(--S) * .048); padding: 0; background: transparent; border: 0; border-radius: 6px; cursor: pointer; z-index: 6">
+    <img src="./assets/c9692e8d29d71662401a92d039373991.png" alt="金日事宜 TODAY'S MATTER" style="display: block; width: 100%; height: auto">
+  </button>
+  <div style="position: absolute; right: calc(var(--E) + var(--MW) + clamp(10px, 1.6vw, 28px)); top: calc(clamp(14px, 3.4vh, 40px) + var(--S) * .011); width: calc(var(--S) * .18); z-index: 6">
+    <img src="./assets/214b96d25e89945ca9686a105d534add.png" alt="" style="display: block; width: 100%; height: auto; visibility: hidden">
+    <button onClick="{{openAbout}}" aria-label="關於" class="hot" style="position: absolute; left: 0; top: 0; width: 44.44%; height: 100%; padding: 0; background: transparent; border: 0; cursor: pointer"><img src="./assets/6e0d6ef2d77647fb6c9bc6cd1e1aae35.png" alt="" style="display: block; width: 100%; height: 100%"></button>
+    <button onClick="{{openList}}" aria-label="收錄（籤詩列表）" class="hot" style="position: absolute; left: 51.85%; top: 0; width: 48.15%; height: 100%; padding: 0; background: transparent; border: 0; cursor: pointer"><img src="./assets/192e154e10d8c8d35c45a63a7836ba2d.png" alt="" style="display: block; width: 100%; height: 100%"></button>
+  </div>
+
+<div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: var(--S); aspect-ratio: 16 / 9; container-type: size; z-index: 3">
+
+  <sc-if value="{{isName}}" hint-placeholder-val="{{ false }}">
+    <div class="scr" aria-hidden="true" style="position: absolute; left: 48.295%; top: 57.103%; width: 0; height: 0; perspective: 149.87cqw; z-index: 1">
+      <div style="transform-style: preserve-3d; transform: rotateZ(13.695deg) rotateX(18.63deg)">
+        <div class="ring3d">
+          <sc-for list="{{nameTiles}}" as="g" hint-placeholder-count="60"><span style="{{g.style}}">{{g.ch}}</span></sc-for>
+          <sc-for list="{{namePink}}" as="g" hint-placeholder-count="192"><div class="{{g.cls}}" style="{{g.style}}"></div></sc-for>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" style="position: absolute; left: 36.3%; top: 48.16%; width: 27.39%; height: 8.49%; border-radius: 999px; background: #fff; box-shadow: 0 0 2.4cqw .5cqw rgba(170,170,255,.95), {{nameRing2}}; z-index: 2"></div>
+    <img aria-hidden="true" src="./assets/628d9942ca8935cf71fbab9b4020b867.png" alt="" style="position: absolute; left: 35%; top: 45.78%; width: 30%; height: 13.33%; z-index: 2">
+    <label for="nm" class="sr">輸入你的代稱</label>
+    <input id="nm" class="home-in" value="{{name}}" onChange="{{onName}}" onKeyDown="{{nameKey}}" autocomplete="off" style="position: absolute; left: 38.2%; top: 49.4%; width: 20%; height: 5.6%; z-index: 4; border: 0; outline: none; padding: 0 0 0 .2cqw; background: {{nameInBg}}; color: #141414; caret-color: #141414; font-family: 'GenSen M', sans-serif; font-size: 1.75cqw; letter-spacing: .08em">
+    <button onClick="{{submitName}}" aria-label="下一步" class="hotI" style="position: absolute; left: 58.4%; top: 49.78%; width: 4.3%; height: 5.16%; padding: 0; background: transparent; border: 0; cursor: pointer; z-index: 4"><img src="./assets/f67a4547c9033e3d2a0a5ccbd3c02aae.png" alt="" style="display: block; width: 100%; height: 100%"></button>
+  </sc-if>
+
+  <sc-if value="{{isQuestion}}" hint-placeholder-val="{{ false }}">
+    <div class="scr" aria-hidden="true" style="position: absolute; left: 48.499%; top: 58.369%; width: 0; height: 0; perspective: 149.87cqw; z-index: 1">
+      <div style="transform-style: preserve-3d; transform: rotateZ(38.656deg) rotateX(45.901deg)">
+        <div class="ring3d">
+          <sc-for list="{{askRing}}" as="g" hint-placeholder-count="192"><div class="{{g.cls}}" style="{{g.style}}"></div></sc-for>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" style="position: absolute; left: 31.8%; top: 44.89%; width: 36.4%; height: 8.44%; border-radius: 999px; background: #fff; box-shadow: 0 0 2.6cqw .6cqw rgba(190,190,255,.9); z-index: 2"></div>
+    <img aria-hidden="true" src="./assets/9f14d9b51dcdcf2c64381714a8160f42.png" alt="" style="position: absolute; left: 30%; top: 42.67%; width: 40%; height: 26.67%; z-index: 2">
+    <label for="qs" class="sr">來 說出你的煩惱</label>
+    <input id="qs" class="home-in" value="{{q}}" onChange="{{onQ}}" onKeyDown="{{qKey}}" autocomplete="off" style="position: absolute; left: 33.9%; top: 46.2%; width: 28.8%; height: 5.6%; z-index: 4; border: 0; outline: none; padding: 0 0 0 .2cqw; background: {{qInBg}}; color: #141414; caret-color: #141414; font-family: 'GenSen M', sans-serif; font-size: 1.75cqw; letter-spacing: .08em">
+    <button onClick="{{submitQ}}" aria-label="送出問題" class="hotI" style="position: absolute; left: 62.9%; top: 46.93%; width: 4.3%; height: 5.16%; padding: 0; background: transparent; border: 0; cursor: pointer; z-index: 4"><img src="./assets/1c78d0698a89dbb3d2173364a50a527c.png" alt="" style="display: block; width: 100%; height: 100%"></button>
+    <button onClick="{{chipPick0}}" class="chip-hot {{chipPick0Cls}}" style="position: absolute; left: 34%; top: 57.78%; width: 7.13%; height: 3.69%; border: 0; border-radius: 999px; cursor: pointer; z-index: 4">未來迷茫</button>
+    <button onClick="{{chipPick1}}" class="chip-hot {{chipPick1Cls}}" style="position: absolute; left: 41.7%; top: 57.78%; width: 13.3%; height: 3.69%; border: 0; border-radius: 999px; cursor: pointer; z-index: 4">思考卡住，沒有方向</button>
+    <button onClick="{{chipPick4}}" class="chip-hot {{chipPick4Cls}}" style="position: absolute; left: 55.63%; top: 57.78%; width: 9.75%; height: 3.69%; border: 0; border-radius: 999px; cursor: pointer; z-index: 4">在意別人眼光</button>
+    <button onClick="{{chipPick3}}" class="chip-hot {{chipPick3Cls}}" style="position: absolute; left: 35.45%; top: 63.11%; width: 20.38%; height: 3.69%; border: 0; border-radius: 999px; cursor: pointer; z-index: 4">為什麼付出努力卻都沒有收穫</button>
+    <button onClick="{{chipPick2}}" class="chip-hot {{chipPick2Cls}}" style="position: absolute; left: 56.25%; top: 63.11%; width: 7.5%; height: 3.69%; border: 0; border-radius: 999px; cursor: pointer; z-index: 4">害怕失敗</button>
+  </sc-if>
+
+  <sc-if value="{{isSearch}}" hint-placeholder-val="{{ false }}">
+    <div class="scr" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.6cqw; z-index: 3">
+      <div class="spin" aria-hidden="true" style="position: relative; width: 5.6cqw; height: 5.6cqw">
+        <sc-for list="{{beads}}" as="b" hint-placeholder-count="12"><span style="{{b.style}}"></span></sc-for>
+      </div>
+      <p style="margin: 0; font-family: 'GenSen B', sans-serif; font-size: 1.5cqw; letter-spacing: .3em; color: #FFFFFF">正在整理這筆提問</p>
+      <p class="blink" style="margin: 0; font-size: 1cqw; letter-spacing: .2em; color: #FFFFFF">引路人正在對照金剛經句…</p>
+      <p style="margin: 0; max-width: 60cqw; text-align: center; font-size: .95cqw; letter-spacing: .1em; color: #FFFFFF">「{{q}}」</p>
+    </div>
+  </sc-if>
+</div>
+</section>
+</sc-if>
+
+<!-- ============ 06 經文解碼（白底） ============ -->
+<sc-if value="{{isSutra}}" hint-placeholder-val="{{ false }}">
+<section class="scr" style="position: relative; min-height: 100vh; width: 100%; background: #fff; overflow: hidden; --S: min(100vw, 177.78vh); --E: clamp(6px, 1.1vw, 20px); --MW: calc(var(--S) * .044)">
+  <div aria-hidden="true" style="position: absolute; left: var(--E); top: 0; bottom: 0; width: var(--MW); overflow: hidden; z-index: 5; pointer-events: none">
+    <div class="mq" style="display: flex; flex-direction: column">
+      <sc-for list="{{mqTiles}}" as="m" hint-placeholder-count="8"><img src="./assets/98277fbf402d87c8dd2947b98e006109.png" alt="" style="display: block; width: 100%; height: auto"></sc-for>
+    </div>
+  </div>
+  <div aria-hidden="true" style="position: absolute; right: var(--E); top: 0; bottom: 0; width: var(--MW); overflow: hidden; z-index: 5; pointer-events: none">
+    <div class="mqDown" style="display: flex; flex-direction: column">
+      <sc-for list="{{mqTiles}}" as="m" hint-placeholder-count="8"><img src="./assets/66ec0759144bab64aedc10abfe61330f.png" alt="" style="display: block; width: 100%; height: auto"></sc-for>
+    </div>
+  </div>
+  <button onClick="{{goHome}}" aria-label="金日事宜｜回到首頁" class="hotB" style="position: absolute; left: calc(var(--E) + var(--MW) + clamp(10px, 1.6vw, 28px)); top: clamp(14px, 3.4vh, 40px); width: calc(var(--S) * .048); padding: 0; background: transparent; border: 0; border-radius: 6px; cursor: pointer; z-index: 6">
+    <img src="./assets/551c90aa773bf06e4e959891736507f6.png" alt="金日事宜 TODAY'S MATTER" style="display: block; width: 100%; height: auto">
+  </button>
+  <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: var(--S); aspect-ratio: 16 / 9; container-type: size; z-index: 3; color: var(--Maincolor, #0000ff)">
+    <img src="./assets/0fc139da65f8e2ede5fbdde1bef7d422.jpg" alt="經文解碼：應如是住，如是降伏其心（善現啟請分第二）" style="position: absolute; inset: 0; width: 100%; height: 100%">
+    <sc-for list="{{pieces}}" as="p" hint-placeholder-count="23"><img class="{{p.cls}}" src="{{p.src}}" alt="" style="{{p.style}}"></sc-for>
+    <p style="position: absolute; right: 10.5%; top: 17.6%; margin: 0; max-width: 40%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: 'GenSen B', sans-serif; font-size: {{nameFs}}; line-height: 1.3; letter-spacing: .12em"><span style="font-family: 'GenSen M'; display: inline-block; transform: scaleY(1.35); margin-right: .15em">(</span>{{name}}<span style="font-family: 'GenSen M'; display: inline-block; transform: scaleY(1.35); margin-left: .05em">)</span></p>
+    <p style="position: absolute; right: 10.5%; top: 28.2%; margin: 0; max-width: 36%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.2cqw; letter-spacing: .1em">：{{q}}</p>
+    <div style="position: absolute; left: 84.5%; top: 80%; width: 8.9%; height: 16%; z-index: 30; opacity: 0; animation: btnPop .45s cubic-bezier(.3,1.5,.5,1) 1.6s forwards">
+      <button onClick="{{goInteract}}" onMouseEnter="{{beadsOn}}" onMouseLeave="{{beadsOff}}" onFocus="{{beadsOn}}" onBlur="{{beadsOff}}" aria-label="點擊體驗" class="hotI" style="position: absolute; inset: 0; padding: 0; background: transparent; border: 0; cursor: pointer"><img src="./assets/398666c23d0b548e2b2d1822518e83e0.png" alt="" style="display: block; width: 100%; height: 100%; border-radius: 50%"></button>
+      <sc-if value="{{hoverBeads}}" hint-placeholder-val="{{ false }}">
+        <span style="position: absolute; right: 30%; bottom: 105%; white-space: nowrap; background: #fff; border: .12cqw solid #141414; border-radius: 999px; padding: .35cqw 1cqw; font-size: .9cqw; letter-spacing: .14em; color: #E0336B">引路人正帶你前往…</span>
+      </sc-if>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- ============ 07 互動體驗（情境 09，滿版） ============ -->
+<sc-if value="{{isInteract}}" hint-placeholder-val="{{ false }}">
+<section style="position: relative; height: 100vh; min-height: 480px; overflow: hidden; background: #0000ff">
+  <div style="position: absolute; left: 50%; top: 50%; width: max(100vw, 177.78vh); aspect-ratio: 16 / 9; transform: translate(-50%, -50%); container-type: size; overflow: hidden">
+    <div style="position: absolute; left: 0; top: 0; width: 100%; height: 300cqh; transform: translateY({{ix.panY}}); transition: transform 3.2s cubic-bezier(.55,0,.3,1); will-change: transform">
+      <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100cqh; overflow: hidden">
+        <div style="position: absolute; inset: 0; transform-origin: 0 0; transform: {{ix.cam}}; will-change: transform">
+          <img src="./assets/a5fbe1532aa06929d6fccb1a4068f8a4.jpg" alt="試著傾倒滿溢的焦灼" style="position: absolute; inset: 0; width: 100%; height: 100%">
+          <img src="./assets/da052bcfa837b7f19a2e8181c8bd156e.jpg" alt="有時，把自己困在原地的，是太想把每件事都抓緊的執念。" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: {{ix.b98o}}; transition: opacity .9s ease">
+          <img src="./assets/b8cfcf1e78f843733e4442d608b6ecfc.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: {{ix.b13o}}; transition: opacity 1.1s ease">
+          <sc-if value="{{ix.showHands}}" hint-placeholder-val="{{ false }}">
+            <img class="hand" src="./assets/3280a332521350fa9937dbf69414e3d2.webp" alt="" style="position: absolute; left: 60%; top: 27.33%; width: 4.625%; height: 6%; --d: .25s">
+            <img class="hand" src="./assets/c78ad776830340077f6924816670436a.webp" alt="" style="position: absolute; left: 51.13%; top: 31.19%; width: 4.75%; height: 6%; --d: .6s">
+            <img class="hand" src="./assets/529e5e0c76f420a376fd748142d3c282.webp" alt="" style="position: absolute; left: 47.46%; top: 44.67%; width: 4.42%; height: 6.44%; --d: .95s">
+          </sc-if>
+          <div style="position: absolute; left: 57.1667%; top: 40.4444%; width: 34.4167%; height: 43.4074%; transform-origin: 50% 50%; transform: {{ix.boxT}}; transition: {{ix.boxTr}}; opacity: {{ix.boxO}}; will-change: transform">
+            <img src="./assets/d529e2b8640392cc2fc50c728d30be0e.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%">
+            <img src="./assets/ae76528d399cc53773ab1821206b10f2.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: {{ix.c12o}}; transition: opacity .55s ease">
+            <div class="{{ix.fallCls}}" style="position: absolute; inset: 0; opacity: {{ix.c98o}}; transform-origin: 0% 60%">
+              <img src="./assets/746ea3f04adea5babfc98b9357d22392.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; visibility: {{ix.boxVis}}">
+              <canvas ref="{{ix.cvBox}}" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none"></canvas>
+            </div>
+            <sc-for list="{{ix.sqs}}" as="q" hint-placeholder-count="7"><img class="{{q.cls}}" src="{{q.src}}" alt="" style="{{q.pos}}"></sc-for>
+            <sc-for list="{{ix.rps}}" as="r" hint-placeholder-count="10"><div class="{{r.cls}}" style="{{r.pos}}"><div class="{{r.xCls}}"><div class="{{r.qCls}}"><img src="{{r.src}}" alt="" style="display: block; width: 100%; height: 100%; transform: rotate(54deg)"></div></div></div></sc-for>
+            <img src="./assets/899fc7fbcd3673df96edffeb0e543f9f.webp" alt="" style="position: absolute; left: 0; top: 0; width: 100%; height: 8.858%; transform-origin: 100% 100%; transform: {{ix.lidT}}; transition: {{ix.lidTr}}; will-change: transform">
+          </div>
+          <sc-if value="{{phaseB}}" hint-placeholder-val="{{ false }}">
+            <button aria-label="點一下或往左拖動盒子，把裡面的字傾倒出來" onPointerDown="{{ix.boxDown}}" onPointerMove="{{ix.boxMove}}" onPointerUp="{{ix.boxUp}}" onPointerCancel="{{ix.boxUp}}" onKeyDown="{{ix.boxKey}}" style="position: absolute; left: 22%; top: 6%; width: 76%; height: 90%; z-index: 6; background: transparent; border: 0; cursor: {{ix.boxCursor}}; touch-action: none"></button>
+          </sc-if>
+          <div class="{{ix.bcCls}}" style="position: absolute; left: 63.708%; top: 45.111%; width: 22.5%; height: 38.444%; opacity: {{ix.b13o}}; transition: opacity .7s ease; --dd: .25s; --dr: -14deg">
+            <img src="./assets/0744b6d2adfd853408c0bf7681763a50.webp" alt="" style="display: block; width: 100%; height: 100%">
+          </div>
+          <sc-if value="{{ix.flyOn}}" hint-placeholder-val="{{ false }}">
+            <sc-for list="{{ix.flyers}}" as="f" hint-placeholder-count="28">
+              <div class="{{f.dropCls}}" style="{{f.pos}}">
+                <div class="{{f.tCls}}" style="{{f.tStyle}}"><div class="flX"><div class="flY"><img class="flS" src="{{f.src}}" alt="" style="display: block; width: 100%; height: 100%"></div></div></div>
+              </div>
+            </sc-for>
+          </sc-if>
+        </div>
+      </div>
+      <div aria-hidden="true" style="position: absolute; left: 0; top: 100cqh; width: 100%; height: 100cqh; background: linear-gradient(to bottom, #0000FF 0%, #2a2aff 22%, #8080ff 52%, #d4d4ff 80%, #FFFFFF 100%)"></div>
+      <div role="img" aria-label="騰出一些空間給自己" style="position: absolute; left: 0; top: 200cqh; width: 100%; height: 100cqh; overflow: hidden">
+        <img src="./assets/c4f4469570e2575336e53745b12c7cbf.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%">
+        <sc-if value="{{ix.endOn}}" hint-placeholder-val="{{ false }}">
+          <sc-for list="{{ix.endChars}}" as="e" hint-placeholder-count="9">
+            <div style="{{e.pos}}"><div class="bX" style="{{e.vars}}"><div class="bY" style="{{e.vars}}"><img class="bS" src="{{e.src}}" alt="" style="{{e.vars}}; display: block; width: 100%; height: 100%"></div></div></div>
+          </sc-for>
+        </sc-if>
+        <sc-if value="{{ix.showDone}}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{toFortune}}" aria-label="完整解析" class="hotI donePop" style="position: absolute; left: {{ix.btnL}}; top: {{ix.btnT}}; width: {{ix.btnW}}; height: {{ix.btnH}}; padding: 0; border: 0; background: transparent; cursor: pointer; z-index: 8"><img src="./assets/ee2e03b72b6fd0acbdfd130ee5924a6a.webp" alt="" style="display: block; width: 100%; height: 100%"></button>
+        </sc-if>
+      </div>
+    </div>
+
+    <img src="./assets/3d88449802f22e563bd8d3ec8eb2d37a.webp" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 4; opacity: {{ix.mqO}}; transition: opacity .6s ease">
+    <div style="position: absolute; left: 8%; top: 30%; width: 3.6%; height: 40%; z-index: 7; opacity: {{ix.sliderO}}; transition: opacity .5s ease; pointer-events: {{ix.sliderPE}}">
+      <div aria-hidden="true" style="position: absolute; left: 49.4%; top: 18.15%; height: 69.5%; width: .83cqw; transform: translateX(-50%); background: #fff; border-radius: 999px"></div>
+      <div aria-hidden="true" style="position: absolute; left: 49.4%; top: {{ix.knobTop}}; width: 2.667cqw; height: 2.667cqw; transform: translate(-50%, -50%); background: #fff; border-radius: 50%"></div>
+      <div role="slider" tabindex="0" aria-label="往下拉，把畫面縮小、把念頭收進框裡" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ix.valNow}}" onPointerDown="{{ix.sDown}}" onPointerMove="{{ix.sMove}}" onPointerUp="{{ix.sUp}}" onPointerCancel="{{ix.sUp}}" onKeyDown="{{ix.sKey}}" style="position: absolute; inset: 0; cursor: ns-resize; touch-action: none; outline-offset: 4px"></div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- ============ 08 完成紀錄｜觀看解析（三折頁，往下捲動慢慢展開） ============ -->
+<sc-if value="{{isFortune}}" hint-placeholder-val="{{ false }}">
+<section onScroll="{{foldScroll}}" style="position: relative; height: 100vh; overflow-y: auto; overflow-x: hidden; background: #fff">
+  <div style="position: relative; height: 340vh">
+    <div style="position: sticky; top: 0; height: 100vh; overflow: hidden; --cw: min(44vw, 540px, 62vh); --E: clamp(6px, 1.1vw, 20px); --MW: clamp(28px, 3.4vw, 64px)">
+      <div aria-hidden="true" style="position: absolute; left: var(--E); top: 0; bottom: 0; width: var(--MW); overflow: hidden">
+        <div class="mq" style="display: flex; flex-direction: column"><sc-for list="{{mqTiles}}" as="m" hint-placeholder-count="8"><img src="./assets/979e53caeb199ce06cf30ba165579477.png" alt="" style="display: block; width: 100%; height: auto"></sc-for></div>
+      </div>
+      <div aria-hidden="true" style="position: absolute; right: var(--E); top: 0; bottom: 0; width: var(--MW); overflow: hidden">
+        <div class="mqDown" style="display: flex; flex-direction: column"><sc-for list="{{mqTiles}}" as="m" hint-placeholder-count="8"><img src="./assets/979e53caeb199ce06cf30ba165579477.png" alt="" style="display: block; width: 100%; height: auto"></sc-for></div>
+      </div>
+      <button onClick="{{goHome}}" aria-label="金日事宜｜回到首頁" class="hotB" style="position: absolute; left: calc(var(--E) + var(--MW) + 16px); top: 3vh; width: clamp(40px, 4vw, 64px); padding: 0; background: transparent; border: 0; border-radius: 6px; cursor: pointer; z-index: 6">
+        <img src="./assets/31c52856573f6dbd194b9ce1c0484f8f.png" alt="金日事宜 TODAY'S MATTER" style="display: block; width: 100%; height: auto">
+      </button>
+      <div class="nudge" style="position: absolute; left: 50%; top: 4vh; translate: -50% 0; z-index: 4; opacity: {{fold.headO}}; transition: opacity .3s">
+        <img src="./assets/e3015edb4398394d33d8c05aa482eaae.png" alt="往下展開 觀看解析" style="display: block; height: clamp(22px, 3.4vh, 34px); width: auto">
+      </div>
+      <div style="position: absolute; left: calc(50% - var(--cw) / 2 - clamp(70px, 9vw, 120px)); bottom: 6vh; display: flex; flex-direction: column; gap: 1.6vh; z-index: 6; opacity: {{fold.iconO}}; transform: translateY({{fold.iconY}}); pointer-events: {{fold.iconPE}}; transition: opacity .6s ease, transform .6s ease">
+        <a href="./assets/5083e8e0b197c7da66e26a0a140a370a.png" download="金日事宜_籤詩09.png" class="hotB" style="display: block; width: clamp(30px, 3vw, 46px); border-radius: 8px"><img src="./assets/65c80acfefa0ea17c0d6db3cd0e78265.png" alt="保存" style="display: block; width: 100%; height: auto"></a>
+        <button onClick="{{goHome}}" class="hotB" style="display: block; width: clamp(30px, 3vw, 46px); padding: 0; border: 0; background: transparent; border-radius: 8px; cursor: pointer"><img src="./assets/fa70582643b5fcae6adfca5285de318b.png" alt="回到主頁" style="display: block; width: 100%; height: auto"></button>
+        <button onClick="{{openList}}" class="hotB" style="display: block; width: clamp(30px, 3vw, 46px); padding: 0; border: 0; background: transparent; border-radius: 8px; cursor: pointer"><img src="./assets/44427205060a2aa6650e8fcaba9eb35a.png" alt="其他收錄" style="display: block; width: 100%; height: auto"></button>
+      </div>
+      <div style="position: absolute; left: 50%; top: 11vh; width: var(--cw); transform: translateX(-50%) translateY({{fold.cam}}); perspective: 2400px; perspective-origin: 50% 0%">
+        <div style="position: relative; width: 100%; aspect-ratio: 900 / 766; transform-style: preserve-3d; container-type: inline-size">
+          <img src="./assets/0da090dc1d86e053eb1a3c8a249fb11f.webp" alt="給：觀者，善現啟請分第二 09 應如是住，如是降伏其心" style="position: absolute; inset: 0; width: 100%; height: 100%; transform: translateZ(1px); filter: drop-shadow(0 18px 24px rgba(0,0,90,.18))">
+          <div aria-hidden="true" class="fxw on" style="position: absolute; inset: 0; transform: translateZ(1.5px); backface-visibility: hidden; -webkit-backface-visibility: hidden; pointer-events: none"><img class="fx fx-pop" src="./assets/1e1790fec30723deeef01912cc4c0adf.webp" alt="" style="left:5.000%;top:8.355%;width:13.889%;height:15.535%;--d:0.95s"><img class="fx fx-bub" src="./assets/f8bd28988d9c90cc908132827e296dd6.webp" alt="" style="left:27.778%;top:8.355%;width:42.556%;height:13.316%;--d:0.20s"><img class="fx fx-bub" src="./assets/c0ba2447a878c2ed3ddb4291498bfff9.webp" alt="" style="left:28.667%;top:24.543%;width:58.889%;height:38.512%;--d:0.20s"><img class="fx fx-pop" src="./assets/2d32b900423e8f3e2ed52eded4378dac.webp" alt="" style="left:10.000%;top:26.893%;width:3.889%;height:4.569%;--d:1.05s"><img class="fx fx-pop" src="./assets/af46aa284de6c768fe20e9e9034b231b.webp" alt="" style="left:10.000%;top:32.768%;width:3.889%;height:4.569%;--d:1.12s"><img class="fx fx-line" src="./assets/38519dda2a36f5d5621f19c8f0a1f6c6.webp" alt="" style="left:4.556%;top:43.081%;width:14.667%;height:17.232%;--d:1.15s"><img class="fx fx-bub" src="./assets/26a85290f1c3ad8c16af8c5ddd9de153.webp" alt="" style="left:49.444%;top:62.272%;width:1.889%;height:1.305%;--d:0.20s"><img class="fx fx-rise" src="./assets/139620d5cc9e4ade7c5aa9efc81dd055.webp" alt="" style="left:46.222%;top:70.366%;width:33.333%;height:9.138%;--d:1.50s"><img class="fx fx-line" src="./assets/e8c3fe52abe60cb939645e9bc31913f3.webp" alt="" style="left:4.556%;top:74.543%;width:14.667%;height:17.493%;--d:1.30s"><img class="fx fx-rise" src="./assets/fb5254df36d9f2b53f648c7a022d136c.webp" alt="" style="left:46.333%;top:82.898%;width:49.667%;height:9.138%;--d:1.70s"></div>
+          <div style="position: absolute; left: 4.7%; top: 46.7%; width: 14.4%; height: 40.2%; display: flex; align-items: center; justify-content: center; transform: translateZ(2px)">
+            <span style="writing-mode: vertical-rl; font-family: 'GenSen B', sans-serif; font-size: {{vNameFs}}; animation: rise .8s ease 1.25s both; line-height: 1; letter-spacing: .05em; color: #FA8CC2; white-space: nowrap">{{name}}</span>
+          </div>
+          <div style="position: absolute; left: 0; top: 100%; width: 100%; height: 100%; transform-origin: 50% 0; transform: rotateX({{fold.a2}}deg); transform-style: preserve-3d; opacity: {{fold.o2}}">
+            <img src="./assets/7d3ae4c878a8a3672b0c249ee9bf1768.webp" alt="經文怎麼說" style="position: absolute; inset: 0; width: 100%; height: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden">
+            <div aria-hidden="true" class="{{fold.g2}}" style="position: absolute; inset: 0; transform: translateZ(.5px); backface-visibility: hidden; -webkit-backface-visibility: hidden; pointer-events: none"><img class="fx fx-line" src="./assets/f443f7aa6509cca6a10161b31a8eeaa0.webp" alt="" style="left:4.778%;top:6.658%;width:21.333%;height:5.222%;--d:0.05s"><img class="fx fx-big" src="./assets/b1bba9046f697eef1173e666fdf9f2fe.webp" alt="" style="left:26.556%;top:10.444%;width:65.889%;height:40.862%;--d:0.15s;--f:0s"><img class="fx fx-line" src="./assets/17ea76d42a10d8dcf80a0f078b2bac83.webp" alt="" style="left:4.778%;top:14.360%;width:36.667%;height:3.264%;--d:1.00s"><img class="fx fx-line" src="./assets/cfcd42157c24b289f5d33ff4f20c8b13.webp" alt="" style="left:4.778%;top:18.146%;width:33.778%;height:3.264%;--d:1.12s"><img class="fx fx-line" src="./assets/79e6bd234fcdde17a9df0d9465b803c5.webp" alt="" style="left:4.778%;top:21.802%;width:28.111%;height:3.264%;--d:1.24s"><img class="fx fx-line" src="./assets/640165661e225636fb99fd77cd405abd.webp" alt="" style="left:4.778%;top:25.587%;width:29.111%;height:3.133%;--d:1.36s"><img class="fx fx-line" src="./assets/3bef090045d243e00327ef52506409b7.webp" alt="" style="left:4.778%;top:29.243%;width:19.333%;height:3.264%;--d:1.48s"><img class="fx fx-line" src="./assets/2ac18b9639c68ccc538f19384f60a388.webp" alt="" style="left:4.778%;top:33.029%;width:14.000%;height:3.133%;--d:1.60s"><img class="fx fx-big" src="./assets/572ce181980bc4abcbfd2cc0adf64853.webp" alt="" style="left:24.889%;top:49.869%;width:59.667%;height:37.728%;--d:0.35s;--f:1.3s"><img class="fx fx-pop" src="./assets/365737e76515dee8a312cda9d0e584f6.webp" alt="" style="left:61.667%;top:87.076%;width:7.111%;height:7.963%;--d:0.55s"><img class="fx fx-line" src="./assets/c708afecb01198b7b797069838166bbb.webp" alt="" style="left:61.778%;top:96.345%;width:28.000%;height:3.655%;--d:0.65s"></div><div aria-hidden="true" class="{{fold.g3}}" style="position: absolute; inset: 0; transform: translateZ(.6px); backface-visibility: hidden; -webkit-backface-visibility: hidden; pointer-events: none"><img class="fx fx-big" src="./assets/4db01d1c697d05f38620c81a855eec79.webp" alt="" style="left:35.000%;top:84.465%;width:25.333%;height:15.535%;--d:0.10s;--f:2.6s"></div>
+            <div aria-hidden="true" style="position: absolute; inset: 0; background: #0000c8; transform: rotateX(180deg); backface-visibility: hidden; -webkit-backface-visibility: hidden"></div>
+            <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,60,.55), rgba(0,0,60,.15)); opacity: {{fold.s2}}; backface-visibility: hidden; pointer-events: none"></div>
+            <div style="position: absolute; left: 0; top: 100%; width: 100%; height: 100%; transform-origin: 50% 0; transform: rotateX({{fold.a3}}deg); transform-style: preserve-3d; opacity: {{fold.o3}}">
+              <img src="./assets/da66512f3430329c6838cc74516469d0.webp" alt="詳細怎麼說" style="position: absolute; inset: 0; width: 100%; height: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden">
+              <div aria-hidden="true" class="{{fold.g3}}" style="position: absolute; inset: 0; transform: translateZ(.5px); backface-visibility: hidden; -webkit-backface-visibility: hidden; pointer-events: none"><img class="fx fx-big" src="./assets/a188c8bb6fef4ee69059201314515228.webp" alt="" style="left:23.667%;top:0.000%;width:31.222%;height:21.149%;--d:0.10s;--f:2.6s"><img class="fx fx-line" src="./assets/8ee818a3beab526d4572fd79b085820a.webp" alt="" style="left:61.889%;top:6.919%;width:23.556%;height:3.264%;--d:0.90s"><img class="fx fx-line" src="./assets/b04f06e032802e78b4df50f5d101a0da.webp" alt="" style="left:61.889%;top:10.705%;width:33.889%;height:3.264%;--d:1.02s"><img class="fx fx-line" src="./assets/25d829e74e40a74945a2e74d1c3b9d1d.webp" alt="" style="left:61.889%;top:14.491%;width:33.000%;height:3.133%;--d:1.14s"><img class="fx fx-big" src="./assets/f4fc76ab7e71758c5490289a9559f88f.webp" alt="" style="left:7.778%;top:19.452%;width:47.444%;height:27.546%;--d:0.30s;--f:3.9s"><img class="fx fx-line" src="./assets/29dec44b306ba35fe5a7aa2a053a0bbd.webp" alt="" style="left:4.778%;top:48.956%;width:21.333%;height:5.222%;--d:0.50s"><img class="fx fx-line" src="./assets/8b10f36cdc96098271b39d5a7e197323.webp" alt="" style="left:5.222%;top:55.483%;width:90.778%;height:3.264%;--d:1.25s"><img class="fx fx-line" src="./assets/3a732b63a5d4486d6ff1ae8867f31ea5.webp" alt="" style="left:5.222%;top:59.138%;width:90.778%;height:3.264%;--d:1.37s"><img class="fx fx-line" src="./assets/595fd725f7bf740278c2c67de48a9b19.webp" alt="" style="left:5.222%;top:62.924%;width:90.667%;height:3.264%;--d:1.49s"><img class="fx fx-line" src="./assets/73da648d65553e681dc7257e00d9acdf.webp" alt="" style="left:5.222%;top:66.580%;width:64.556%;height:3.264%;--d:1.61s"><img class="fx fx-line" src="./assets/52386ad81d98f2badcc286b5cbae14c4.webp" alt="" style="left:5.222%;top:70.366%;width:28.333%;height:3.133%;--d:1.73s"><img class="fx fx-pop" src="./assets/19256efe3464e870df48fd7e2337e262.webp" alt="" style="left:45.444%;top:80.679%;width:9.222%;height:15.013%;--d:2.00s"></div><div aria-hidden="true" class="{{fold.g2}}" style="position: absolute; inset: 0; transform: translateZ(.6px); backface-visibility: hidden; -webkit-backface-visibility: hidden; pointer-events: none"><img class="fx fx-line" src="./assets/f0ab0b960df00637402dc2ba933433a9.webp" alt="" style="left:61.778%;top:0.000%;width:28.000%;height:4.569%;--d:0.65s"></div>
+              <div aria-hidden="true" style="position: absolute; inset: 0; background: #0000c8; border-radius: 0 0 6% 6% / 0 0 7% 7%; transform: rotateX(180deg); backface-visibility: hidden; -webkit-backface-visibility: hidden"></div>
+              <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,60,.55), rgba(0,0,60,.15)); opacity: {{fold.s3}}; backface-visibility: hidden; pointer-events: none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- ============ 收錄｜扇形卡牌 ============ -->
+<sc-if value="{{isList}}" hint-placeholder-val="{{ false }}">
+<section onWheel="{{wheel}}" style="position: relative; height: 100vh; min-height: 520px; background: var(--Maincolor, #0000ff); overflow: hidden">
+  <div style="position: absolute; left: 50%; top: 12vh; width: 0; height: 0">
+    <sc-for list="{{fan}}" as="c" hint-placeholder-count="10">
+      <div style="{{c.wrap}}">
+        <button class="fcard" onClick="{{c.pick}}" aria-label="{{c.aria}}" style="display: block; width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: pointer">
+          <img src="{{c.img}}" alt="" style="display: block; width: 100%; height: 100%; filter: drop-shadow(-6px 10px 16px rgba(0,0,60,.25))">
+        </button>
+      </div>
+    </sc-for>
+  </div>
+  <p style="position: absolute; left: 0; right: 0; top: 62vh; margin: 0; text-align: center; font-size: 13px; letter-spacing: .3em; color: rgba(255,255,255,.75)">← 滾動滑鼠或左右切換，選一張籤詩 →</p>
+  <div style="position: absolute; left: 50%; top: 66vh; transform: translateX(-50%); display: flex; gap: 14px">
+    <button onClick="{{fanPrev}}" aria-label="往左" class="hot" style="width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid #fff; background: transparent; color: #fff; cursor: pointer; font-size: 18px">‹</button>
+    <button onClick="{{fanNext}}" aria-label="往右" class="hot" style="width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid #fff; background: transparent; color: #fff; cursor: pointer; font-size: 18px">›</button>
+  </div>
+  <button onClick="{{goHome}}" aria-label="金日事宜｜回到首頁" class="hot" style="position: absolute; left: 2.2vw; bottom: 13vh; width: clamp(44px, 5vw, 80px); padding: 0; background: transparent; border: 0; border-radius: 6px; cursor: pointer; z-index: 3">
+    <img src="./assets/c9692e8d29d71662401a92d039373991.png" alt="金日事宜 TODAY'S MATTER" style="display: block; width: 100%; height: auto">
+  </button>
+  <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 2vh; height: 9vh; overflow: hidden">
+    <div class="mqL" style="display: flex; height: 100%; width: max-content">
+      <sc-for list="{{mqTiles}}" as="m" hint-placeholder-count="8"><img src="./assets/e2cc5ab451af42cdabb1c7bc62741ea4.png" alt="" style="display: block; height: 100%; width: auto"></sc-for>
+    </div>
+  </div>
+
+  <sc-if value="{{hasPick}}" hint-placeholder-val="{{ false }}">
+    <div style="position: absolute; inset: 0; z-index: 20; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(0,0,200,.25); display: flex; align-items: center; justify-content: center; animation: fadeIn .4s ease both">
+      <div style="position: relative; height: min(66vh, 640px); aspect-ratio: 640 / 1022; perspective: 1600px">
+        <div class="flip3d" style="position: absolute; inset: 0">
+          <div class="face"><img src="{{pick.card}}" alt="籤詩 {{pick.num}} 正面" style="width: 100%; height: 100%; display: block"></div>
+          <div class="face" style="transform: rotateY(180deg); background: var(--Maincolor, #0000ff); box-shadow: 0 30px 60px -20px rgba(0,0,60,.6); border: 1px solid rgba(255,255,255,.5)">
+            <sc-if value="{{pickIsNine}}" hint-placeholder-val="{{ false }}">
+              <img src="./assets/4003a341ce55d9254effccecf6eb71e9.png" alt="籤詩 09 背面：應如是住，如是降伏其心" style="width: 100%; height: 100%; display: block">
+              <button onClick="{{goExperience}}" aria-label="前往體驗" class="hotI" style="position: absolute; left: 35.94%; top: 76.53%; width: 30%; height: 18.5%; padding: 0; border: 0; background: transparent; cursor: pointer"><img src="./assets/67bcf6d71a1579cdd113a34e954073e8.png" alt="" style="display: block; width: 100%; height: 100%; border-radius: 50%"></button>
+            </sc-if>
+            <sc-if value="{{pickNotNine}}" hint-placeholder-val="{{ true }}">
+              <div style="position: absolute; inset: 0; padding: 12% 10%; display: flex; flex-direction: column; justify-content: space-between; color: #fff">
+                <span style="font-family: 'GenSen B'; font-size: clamp(28px, 4vh, 44px); color: #FA8CC2">{{pick.num}}</span>
+                <p style="margin: 0; font-family: 'GenSen B'; font-size: clamp(20px, 3.4vh, 34px); line-height: 1.35; letter-spacing: .08em; white-space: pre-line">{{pick.goldBreak}}</p>
+                <span style="font-size: 12px; letter-spacing: .14em">金剛經・{{pick.pin}}</span>
+                <button onClick="{{goExperience}}" style="align-self: center; width: 31%; aspect-ratio: 1; border-radius: 50%; border: 0; background: #fff; color: var(--Maincolor, #0000ff); font-family: 'GenSen B'; font-size: clamp(12px, 1.7vh, 16px); line-height: 1.3; cursor: pointer">前往<br>體驗</button>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+        <button onClick="{{closePick}}" aria-label="關閉" class="hot" style="position: absolute; left: calc(100% + 28px); bottom: 2%; width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid #fff; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 4 L16 16 M16 4 L4 16" stroke="#fff" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        </button>
+      </div>
+    </div>
+  </sc-if>
+</section>
+</sc-if>
+
+<sc-if value="{{hasZoom}}" hint-placeholder-val="{{ false }}">
+  <div aria-hidden="true" class="{{zoomCls}}" style="position: fixed; inset: 0; z-index: 70; pointer-events: none; overflow: hidden">
+    <div class="zoomIn" style="position: absolute; inset: 0; overflow: hidden; transform-origin: {{zoomOrigin}}; background: #0000ff">
+      <img src="./assets/7322b1af7d7c9a7423e365926f02a641.jpg" alt="" style="position: absolute; left: 50%; top: 50%; width: max(100vw, 177.78vh); height: auto; aspect-ratio: 16 / 9; transform: translate(-50%, -50%)">
+    </div>
+  </div>
+</sc-if>
+<div class="veil" aria-hidden="true" style="background: {{veilColor}}; opacity: {{veilOp}}"></div>
+
+<!-- ============ 關於 ============ -->
+<sc-if value="{{aboutOpen}}" hint-placeholder-val="{{ false }}">
+  <div style="position: fixed; inset: 0; z-index: 30; background: rgba(0,0,90,.55); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 24px">
+    <div class="scr" style="background: #fff; color: var(--Maincolor, #0000ff); border-radius: 28px; padding: clamp(32px, 5vw, 64px); max-width: 720px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; max-height: 92vh; overflow: auto">
+      <img src="./assets/31c52856573f6dbd194b9ce1c0484f8f.png" alt="金日事宜 TODAY'S MATTER" style="width: 72px">
+      <span style="font-family: 'GenSen B'; letter-spacing: .24em; font-size: 13px">TODAY'S MATTER</span>
+      <p style="margin: 6px 0 0; font-size: 15px; line-height: 2; letter-spacing: .08em">每個問題，都藏著不同的思考方向。<br>說出你心中的疑問，讓千年前《金剛經》的智慧與今日的生活相遇，或許能為你帶來意想不到的觀點。</p>
+      <p style="margin: 0; font-size: 12px; line-height: 2; letter-spacing: .1em; color: #4040ff">輸入名字 → 提出問題 → 對照經句 → 經文解碼 → 互動體驗 → 觀看解析</p>
+      <button onClick="{{closeAbout}}" style="margin-top: 6px; border: 0; background: var(--Maincolor, #0000ff); color: #fff; border-radius: 999px; padding: 11px 28px; font-family: 'GenSen B'; font-size: 14px; letter-spacing: .14em; cursor: pointer">確定</button>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":780}}'>
+const CATS = [
+  { n: 1, dir: '面對時間與變化', topic: '面對未來的不確定，迷茫、不知道該怎麼辦', gold: '過去心不可得，現在心不可得，未來心不可得。', pin: '一體同觀分第十八', mean: '「不必困在過去，也不必急著掌握未來。看見念頭的來去，讓心不被尚未發生的事困住。」', img: './assets/2d7bc590bfb894028d1bbde16fbf6773.png', en: 'Focus', zh: '聚焦的\n圓形框', kw: ['未來','迷茫','迷惘','不確定','怎麼辦','前途','焦慮','方向','茫然'] },
+  { n: 2, dir: '面對時間與變化', topic: '放不下，抗拒失去與變化', gold: '一切有為法，如夢幻泡影，如露亦如電，應作如是觀。', pin: '應化非真分第三十二', mean: '「一切都在流動、變化。允許事物離開，才看得見此刻手中真正擁有的。」', img: './assets/41dc281f9e74b48515426efbfe450129.png', en: 'Bubbles', zh: '泡泡', kw: ['放不下','失去','分手','離開','改變','變化','懷念','回不去','失戀','捨不得'] },
+  { n: 3, dir: '面對自我與得失', topic: '追求完美、害怕失敗，過度在意成果得失', gold: '應無所住而生其心。', pin: '莊嚴淨土分第十', mean: '「把心放在做事本身，而不是黏在結果上。不執著成敗，心反而更自由。」', img: './assets/4d13a24656ef58a79bc12e8118aadb07.png', en: 'Fruit Tree', zh: '大樹結果', kw: ['完美','失敗','成果','成績','結果','考試','輸','得失','表現'] },
+  { n: 4, dir: '面對自我與得失', topic: '自我懷疑，被外在標準定義', gold: '無我相，無人相，無眾生相，無壽者相。', pin: '正信希有分第六', mean: '「你不是別人眼中的標籤。放下比較的尺，才能看見原本的自己。」', img: './assets/425a415ce635505c2d2bd7b7c466c1c7.png', en: 'Popsicle', zh: '冰棒棍', kw: ['自我懷疑','平庸','不夠好','眼光','比較','自卑','價值','認同','普通','別人怎麼看'] },
+  { n: 5, dir: '面對觀念與認知', topic: '面對困惑與新的觀念，難以建立理解與信心', gold: '信心清淨，則生實相。', pin: '離相寂滅分第十四', mean: '「理解需要時間。心安靜下來、不急著下定論，真正的理解自然浮現。」', img: './assets/d298c166526a90f86c1da10ff31c8f1b.png', en: 'Ice Cube', zh: '冰塊', kw: ['困惑','不懂','理解','信心','相信','新的','看不懂','學不會'] },
+  { n: 6, dir: '面對觀念與認知', topic: '資訊繁雜，被既有觀念與方法困住', gold: '法尚應捨，何況非法。', pin: '正信希有分第六', mean: '「方法像渡河的筏，過了河就該放下。別讓工具與舊觀念，反過來困住你。」', img: './assets/dbfd0576b5f0284d7e491c46e7c053f0.png', en: 'Fish', zh: '魚', kw: ['資訊','卡住','框架','方法','太多','思考','想不通','觀念','固執'] },
+  { n: 7, dir: '面對他人與外在關係', topic: '人際衝突、溝通不良，只看見表面而產生誤解', gold: '凡所有相，皆是虛妄。', pin: '如理實見分第五', mean: '「眼前所見只是表象。多一點停頓與好奇，誤解就少一點。」', img: './assets/262beb31dda8834c04ce225fe3cfe39d.png', en: 'XYZ Axis', zh: 'xyz 軸', kw: ['人際','衝突','吵架','溝通','朋友','同事','家人','關係','表面'] },
+  { n: 8, dir: '面對他人與外在關係', topic: '付出之後期待回報', gold: '菩薩於法，應無所住，行於布施。', pin: '妙行無住分第四', mean: '「付出本身就是完整的。不把回報當作條件，給予才會輕盈。」', img: './assets/d32bd79e72578292d71e65d48633a1ec.png', en: 'Balance', zh: '平衡', kw: ['付出','回報','收穫','努力','白費','不值得','感謝'] },
+  { n: 9, dir: '面對內心與人生方向', topic: '想有所作為卻不知道如何安頓自己', gold: '應如是住，如是降伏其心。', pin: '善現啟請分第二', mean: '心需要方向，也需要懂得放下執著。確立想走的方向，踏實付諸行動，卻不必被自我期待與結果限制。', img: './assets/6b9128949aea88aab4efcbb496f74937.png', en: 'Bounce Ball', zh: '彈力球', kw: ['安頓','初心','作為','開始','靜不下','定不下','執念','抓緊','煩躁','心很亂','想做','夢想','人生'] },
+  { n: 10, dir: '面對內心與人生方向', topic: '受到批評、誤解或不公對待', gold: '知一切法無我，得成於忍。', pin: '不受不貪分第二十八', mean: '「批評與誤解是外在的風。不把它當成『我』，就能在忍耐中長出力量。」', img: './assets/04dfde839b5effba70ebaeeb737eb280.png', en: 'Glow', zh: '紅顯', kw: ['批評','誤會','誤解','不公','委屈','被罵','忍','冤枉','針對'] }
+];
+const CARDS = ['', './assets/12765190f3a03e1280136e1ba6544eaf.png', './assets/8fff477ed593799783ada35fa26f4d8e.png', './assets/b4643e73a00f067a3c9fb24107a7c642.png', './assets/06b7ed73064dcd3b1e05f2af9db12b8b.png', './assets/c0e6b2c6f7d0ea295a2401c19b69945e.png', './assets/078309c199dccf83a9e4918e47f0d8c2.png', './assets/086613a96c87fa087cd0ef7d79994174.png', './assets/c676c6979cc4201ef2ac8ad5b57b4839.png', './assets/5083e8e0b197c7da66e26a0a140a370a.png', './assets/435ace1ce9699513f3c786cbf381f69d.png'];
+const FRAMES = ['./assets/5b830d59ee4a78c92291f7d3f032b0a4.jpg', './assets/b311c93e468936bee98739f0274b03b7.jpg', './assets/2f8771546c403ee9eddf88495fc4aaef.jpg', './assets/feebd7238ddc3cb6f5c1b54b2ffd1f63.jpg', './assets/242b15c645f24882b582c05e0c2420ab.jpg', './assets/ffce7b9776e85a00aeadc39b467b66fb.jpg', './assets/483a5c6d8b959b024644579e97bdbaf1.jpg', './assets/2caf3637c7c1239c022b913786d157b0.jpg', './assets/d661b0463be8334571fdc6ddde156e8b.jpg', './assets/f65d4ce8e386421e9b20e1c2fa72e68c.jpg'];
+const FRAME_ALT = ['', '', '有時，把自己困在原地的，是太想把每件事都抓緊的執念。', '試著傾倒滿溢的焦灼', '', '', '', '', '', '騰出一些空間給自己'];
+const CHIPS = ['未來迷茫', '思考卡住，沒有方向', '害怕失敗', '為什麼付出努力卻都沒有收穫', '在意別人眼光'];
+const pad = (n) => String(n).padStart(2, '0');
+const brk = (s) => s.replace(/，/g, '，\n').replace(/。$/, '');
+const clamp = (x) => Math.max(0, Math.min(1, x));
+function classify(text) {
+  let best = 9, score = 0;
+  CATS.forEach((c) => {
+    const s = c.kw.reduce((a, k) => a + (text.indexOf(k) >= 0 ? 1 : 0), 0);
+    if (s > score) { score = s; best = c.n; }
+  });
+  return best;
+}
+// ring text in GenSen Rounded, one span per character placed around a 3D band
+const isCJK = (c) => /[　-鿿＀-￯]/.test(c);
+const adv = (c, f) => isCJK(c) ? f * 1.06 : c === ' ' ? f * 0.4 : /[()?']/.test(c) ? f * 0.48 : f * 0.6;
+function ring(segs, R, yOff, sy, nearTop) {
+  const unit = []; let uLen = 0;
+  segs.forEach((sg) => { [...sg.t].forEach((c) => { const a = adv(c, sg.f); unit.push({ c, a, sg }); uLen += a; }); uLen += sg.gap; unit.push({ gap: sg.gap }); });
+  const C = 2 * Math.PI * R, reps = Math.max(1, Math.floor(C / uLen)), extra = (C - reps * uLen) / (reps * segs.length);
+  const out = []; let acc = 0;
+  for (let r = 0; r < reps; r++) {
+    let segStart = null;
+    unit.forEach((u) => {
+      if (u.gap !== undefined) { acc += u.gap + extra; return; }
+      const sg = u.sg, mid = acc + u.a / 2, deg = (nearTop ? 1 : -1) * (mid / C) * 360, f = sg.f;
+      const place = `transform:rotateY(${deg.toFixed(2)}deg) translateZ(${R}cqw)${nearTop ? '' : ' rotateY(180deg)'} scaleY(${sy}) skewX(${sg.skew || 0}deg)`;
+      const base = `position:absolute;left:${(-u.a / 2).toFixed(3)}cqw;top:${(yOff - f / 2).toFixed(3)}cqw;width:${u.a.toFixed(3)}cqw;height:${f.toFixed(3)}cqw;line-height:1;text-align:center;font-size:${f}cqw;font-family:'${sg.font}',sans-serif;white-space:pre;`;
+      out.push({ ch: u.c, style: base + `color:rgba(${sg.rgb},.92);backface-visibility:hidden;-webkit-backface-visibility:hidden;` + place });
+      out.push({ ch: u.c, style: base + `color:rgba(${sg.rgb},.4);` + place.replace(`translateZ(${R}cqw)`, `translateZ(${(R + 0.06).toFixed(2)}cqw)`) });
+      if (sg.bar) {
+        const bs = `position:absolute;left:${(-u.a / 2 - 0.02).toFixed(3)}cqw;top:${(yOff - f * 1.05).toFixed(3)}cqw;width:${(u.a + 0.04).toFixed(3)}cqw;height:.14cqw;background:rgba(${sg.rgb},.85);`;
+        out.push({ ch: '', style: bs + place.replace(/ skewX\([^)]*\)/, '') });
+      }
+      acc += u.a;
+    });
+  }
+  return out;
+}
+const GL_WHAT = ["./assets/4553c9d457fe0f33d05a6e9a806d1de4.png", "./assets/eee4cc005468b9b0f6df45530976ad9e.png", "./assets/04641f441ce72b0307f85bdc8a8371e0.png", "./assets/c167bd938aab177ef6fc49e6a74db9ee.png", "./assets/69d2218a2db1786c0a9be4a5b075cbb1.png", "./assets/11a7f1c39a13780b407e0fbe1aba4477.png", "./assets/3dce0f58b960b466db94577348ea726f.png", "./assets/6cefe8f6af8e7d24f3389fafaecd0b0e.png", "./assets/d4b6c8bde9f24d9cdd5a75e89d95505c.png", "./assets/92b139c26a353ba2c8de9c0778824278.png", "./assets/6da01c21d82f3b329224fc231be42c6e.png", "./assets/149e77b14cdf9126fa13db8f56cf8e0d.png", "./assets/fbcc321df25e4b37a7085f8493f0c0ad.png", "./assets/8f962e825f99c81644d5e4f31f434e4c.png", "./assets/3e2a43e99ad75e1ebb3c604ab291327f.png"];
+const GL_OOO = ["./assets/077ccbd3a8d74894c5814a735e675c06.png", "./assets/1b10934c4ac7f530b1ff4c7d38817764.png", "./assets/8a22f8ac76dfaea657c4f8dc22729e31.png", "./assets/b00a9aa934ebd072d39ae47d5f763b20.png", "./assets/c6b0b88fc02e56014000db93a8316ded.png", "./assets/588cbb54653cedf35e2e02a6325cda06.png", "./assets/dae023c45ecb05008246cb81b34efedb.png", "./assets/c8f4385a7496a879b48d642ca4ba0e67.png", "./assets/a696bdbf595250ce7c591396ab204b5b.png", "./assets/8e7dac089a8aeadf9a7eff9d87a18b7d.png"];
+const GL_ASK = ["./assets/a53ec9abbbd577f2b2b83aee74775bc9.png", "./assets/f869e3726eeb6bb542b1f8a3ebc99d66.png", "./assets/6ad02cad349d1d1c14d82f001086155f.png", "./assets/d87d67570eb55e71e4f0ca1ff7c243e1.png", "./assets/7702f5af34bf29243c43427d48c15cda.png", "./assets/357728027cc43aae6cd2e98ec7dd8589.png", "./assets/a4738cd349efc804250b8eb200e385f0.png", "./assets/376746d5e923a8092c6a530779dfe94f.png", "./assets/2fcfda7551ec3e5c2c1f0c8f49e7528e.png", "./assets/b63f47324177ca6e4a03abb6de51049c.png", "./assets/f072f75490ad211047782f78da39c229.png", "./assets/9851658153084bc749dfb3260575b149.png", "./assets/56ec0ab0a52e46600281220dea30c344.png"];
+const GL_Q = './assets/ab2914e38ecb0b9f3e7cdb9c81e71f4c.png', GL_HEAD = './assets/176cd559f381273531680176d327341d.png';
+
+// image glyphs (cut from the ring artwork) laid one per cell on a 3D band — no stretching
+function bandImg(seq, R, yOff, gapAfter, nearTop) {
+  const unitLen = seq.reduce((a, g) => a + g.adv, 0) + gapAfter;
+  const C = 2 * Math.PI * R, reps = Math.max(1, Math.floor(C / unitLen)), slack = (C - reps * unitLen) / reps;
+  const imgs = [], bars = []; let acc = 0;
+  for (let r = 0; r < reps; r++) {
+    seq.forEach((g) => {
+      const mid = acc + g.adv / 2, deg = (nearTop ? 1 : -1) * (mid / C) * 360;
+      const place = `transform:rotateY(${deg.toFixed(2)}deg) translateZ(${R}cqw)${nearTop ? '' : ' rotateY(180deg)'};backface-visibility:visible`;
+      const gs = `position:absolute;left:${(-g.w / 2).toFixed(3)}cqw;top:${(yOff + (g.dy || 0) - g.h / 2).toFixed(3)}cqw;width:${g.w.toFixed(3)}cqw;height:${g.h.toFixed(3)}cqw;`;
+      if (g.src && nearTop) { imgs.push({ src: g.src, style: gs + place.replace('backface-visibility:visible', 'backface-visibility:hidden;-webkit-backface-visibility:hidden') }); imgs.push({ src: g.src, style: gs + 'opacity:.42;' + place }); }
+      else if (g.src) imgs.push({ src: g.src, style: gs + `${g.op ? 'opacity:' + g.op + ';' : ''}${place}` });
+      if (g.bar) bars.push({ ch: '', style: `position:absolute;left:${(-g.adv / 2 - 0.03).toFixed(3)}cqw;top:${(yOff - g.bar).toFixed(3)}cqw;width:${(g.adv + 0.06).toFixed(3)}cqw;height:.16cqw;background:rgb(84,170,204);${place}` });
+      acc += g.adv;
+    });
+    acc += gapAfter + slack;
+  }
+  return { imgs, bars };
+}
+const FW = 1.66, FO = FW * 82 / 62, FA = 1.45;
+const sp = (adv) => ({ src: null, adv, w: 0, h: 0 });
+const NAME_SEQ = [].concat(
+  GL_WHAT.slice(0, 6).map((src) => ({ src, adv: FW * 0.603, w: FW * 0.839, h: FW })), [sp(FW * 0.603)],
+  GL_WHAT.slice(6, 10).map((src) => ({ src, adv: FW * 0.603, w: FW * 0.839, h: FW })), [sp(FW * 0.603)],
+  GL_WHAT.slice(10).map((src) => ({ src, adv: FW * 0.603, w: FW * 0.839, h: FW })), [sp(FW * 1.6)],
+  GL_OOO.map((src) => ({ src, adv: FO * 0.633, w: FO * 0.824, h: FO, dy: 0.15 })));
+const ASK_SEQ = [].concat(
+  GL_ASK.slice(0, 3).map((src) => ({ src, adv: FA * 0.766, w: FA * 0.923, h: FA, bar: FA * 1.05 })), [Object.assign(sp(FA * 0.766), { bar: FA * 1.05 })],
+  GL_ASK.slice(3, 5).map((src) => ({ src, adv: FA * 0.766, w: FA * 0.923, h: FA, bar: FA * 1.05 })), [Object.assign(sp(FA * 0.766), { bar: FA * 1.05 })],
+  GL_ASK.slice(5).map((src) => ({ src, adv: FA * 0.766, w: FA * 0.923, h: FA, bar: FA * 1.05 })),
+  [{ src: GL_HEAD, adv: FA * 1.1, w: FA * 1.6, h: FA * 1.24, dy: -FA * 1.05 + FA * 0.12 }],
+  Array.from({ length: 7 }, () => ({ src: GL_Q, adv: FA * 1.05, w: FA * 1.1, h: FA * 1.5, dy: 0.25 })));
+const NAME_B = bandImg(NAME_SEQ, 22.63, 0, FW * 1.6, true);
+const ASK_B = bandImg(ASK_SEQ, 18.8, 2.5, FA * 2.4);
+const WHITE = '255,255,255';
+const NAME_TILES = ring([{ t: '你ㄟ名字', f: 2.3, gap: 2.2, font: 'GenSen M', rgb: WHITE }], 22.057, -2.56, 1, true);
+const ASK_RING = (() => {
+  const R = 20.687, Wc = 10398 / 80, Hc = 9.2, top = -7, N = 96, tw = Wc / N, out = [];
+  for (let i = 0; i < N; i++) {
+    const phi = -((i + 0.5) / N) * 360, w = tw * 1.012, base = `position:absolute;left:${(-w / 2).toFixed(4)}cqw;top:${top}cqw;width:${w.toFixed(4)}cqw;height:${Hc}cqw;background-size:${Wc.toFixed(4)}cqw ${Hc}cqw;background-repeat:no-repeat;backface-visibility:hidden;-webkit-backface-visibility:hidden;`;
+    out.push({ cls: 'qkS', style: base + `background-position:${(-(i * tw) - tw * 0.006).toFixed(4)}cqw 0;opacity:.45;transform:rotateY(${phi.toFixed(3)}deg) translateZ(${R}cqw) rotateY(180deg)` });
+    out.push({ cls: 'qkM', style: base + `background-position:${(-(Wc - (i + 1) * tw) - tw * 0.006).toFixed(4)}cqw 0;transform:rotateY(${phi.toFixed(3)}deg) translateZ(${R}cqw)` });
+  }
+  return out;
+})();
+// pink ring: the artwork itself, unwrapped onto the 3D band (texture tiles) so every letter keeps its exact place while turning
+const NAME_PINK = (() => {
+  const R = 22.057, Wc = 11087 / 80, Hc = 3.2, N = 96, tw = Wc / N, out = [];
+  for (let i = 0; i < N; i++) {
+    const phi = -((i + 0.5) / N) * 360, w = tw * 1.012, base = `position:absolute;left:${(-w / 2).toFixed(4)}cqw;top:${(-Hc / 2).toFixed(3)}cqw;width:${w.toFixed(4)}cqw;height:${Hc}cqw;background-size:${Wc.toFixed(4)}cqw ${Hc}cqw;background-repeat:no-repeat;backface-visibility:hidden;-webkit-backface-visibility:hidden;`;
+    out.push({ cls: 'pkS', style: base + `background-position:${(-(i * tw) - tw * 0.006).toFixed(4)}cqw 0;opacity:.42;transform:rotateY(${phi.toFixed(3)}deg) translateZ(${R}cqw) rotateY(180deg)` });
+    out.push({ cls: 'pkM', style: base + `background-position:${(-(Wc - (i + 1) * tw) - tw * 0.006).toFixed(4)}cqw 0;transform:rotateY(${phi.toFixed(3)}deg) translateZ(${R}cqw)` });
+  }
+  return out;
+})();
+const ASK_TILES = ring([{ t: '問我', f: 2.5, gap: 1.6, font: 'GenSen M', rgb: WHITE }], 19.5, -1.9, 1).concat(ASK_B.bars);
+const PIECES = [["./assets/1b28824b4d8e3818fc48406075876c0c.png", 13.3, 77.556, 12.66, 22.484, 0.25, -11, 1], ["./assets/a985cad3a802878dd91fb3b8a64d1d23.png", 25.2, 81.067, 10.325, 18.422, 0.47, 9, 2], ["./assets/17c889f3134ca3a84d63fec634a85e9b.png", 26.325, 51.422, 15.975, 28.422, 0.69, -8, 3], ["./assets/710c3f5fed20f2c3e63a5290dba1fceb.png", 35.175, 76.222, 13.107, 23.819, 0.91, 12, 4], ["./assets/e98d42b92b19dcb320594f509287b90c.png", 41.175, 62.667, 9.225, 15.822, 1.13, -10, 5], ["./assets/6b11ae8fe85f53c1f1a26264840617ad.png", 47.925, 78.044, 12.189, 21.974, 1.35, 8, 6], ["./assets/853df8a5527a1e13cd74646b1bc547a6.png", 49.975, 54.444, 13.562, 24.956, 1.57, -12, 7], ["./assets/2f4ae86ff0af635682aaa47f9bf84849.png", 59.15, 78.889, 11.441, 21.146, 1.79, 10, 8], ["./assets/9697270fac682bcdd4374b8b0f359774.png", 62.85, 57.822, 10.475, 19.844, 2.01, -9, 9], ["./assets/84ef302c73dd5633e87d61d765def022.png", 70.25, 75.867, 13.45, 24.173, 2.23, 11, 10], ["./assets/8780a9473ca48b29619234e987a1268d.png", 15.675, 70.089, 12.225, 11.622, 2.55, 0, 11]];
+const PIECE_TILES = (() => {
+  const rows = [PIECES.filter((p) => p[2] + p[4] / 2 >= 80), PIECES.filter((p) => p[2] + p[4] / 2 < 80)];
+  const out = [];
+  rows.forEach((row, ri) => {
+    row.slice().sort((a, b) => a[1] - b[1]).forEach(([src, x, y, w, h, d, r, z], i) => {
+      const jit = [0, 0.06, 0.02, 0.08, 0.03, 0.05][i % 6];
+      out.push({ src, cls: i % 2 ? 'rowR' : 'rowL', style: `position:absolute;left:${x}%;top:${y}%;width:${w}%;height:${h}%;z-index:${z};animation-delay:${(0.3 + ri * 0.28 + i * 0.05 + jit).toFixed(2)}s` });
+    });
+  });
+  return out;
+})();
+const BEADS = Array.from({ length: 12 }, (_, i) => {
+  const a = i / 12 * Math.PI * 2;
+  return { style: `position:absolute;left:${(50 + Math.cos(a) * 40).toFixed(2)}%;top:${(50 + Math.sin(a) * 40).toFixed(2)}%;width:13%;height:13%;transform:translate(-50%,-50%);border-radius:50%;background:#FFFFFF;opacity:${(0.25 + i / 16).toFixed(2)}` };
+});
+// interaction frames: phase A scrubs 1→2→3, phase B scrubs 4→9, then 10
+const FLY = [["./assets/41c07ebf6891c0cf05954cf1a5b03dec.webp", 14.958, 32.296, 17.958, 29.481, 23.938, 47.037], ["./assets/85f1eef6238e4e1ba662c27ee6c79af3.webp", 44.417, 19.556, 13.417, 25.407, 51.125, 32.259], ["./assets/bab75dcdaed90a7d2ddd1634a8b8e02c.webp", 31.083, 57.111, 12.75, 22.667, 37.458, 68.444], ["./assets/ab46ddc0c5f67dfd0f0a786d9d9ce744.webp", 8.292, 83.481, 14.375, 16.519, 15.479, 91.741], ["./assets/46a3355274622fd688885146ed165d31.webp", 60.167, 0.593, 11.333, 20.074, 65.833, 10.63], ["./assets/269b84f605e6341edb2ddf8d2703bf94.webp", 26.125, 7.185, 9.833, 17.852, 31.042, 16.111], ["./assets/02009dc21a5b443221f3fa74fb1c1f23.webp", 54.833, 61.778, 8.417, 14.444, 59.042, 69.0], ["./assets/de0c88477bf463570ab2db1a22ebd854.webp", 4.167, 52.0, 7.958, 14.963, 8.146, 59.481]];
+// box path (stage %): 9-7 -> 9-8 -> 9-9 ; rotation in deg
+const BOXP = [[51.5, 58, 0], [80.7, 48.9, -15], [100.25, 21.9, -45]];
+function mouthAt(tm) {
+  const seg = tm < 1.7 ? 0 : 1, f = Math.min(1, (tm - seg * 1.7) / 1.7), e = f < .5 ? 2 * f * f : 1 - 2 * (1 - f) * (1 - f);
+  const a = BOXP[seg], b = BOXP[seg + 1];
+  const cx = a[0] + (b[0] - a[0]) * e, cy = a[1] + (b[1] - a[1]) * e, r = (a[2] + (b[2] - a[2]) * e) * Math.PI / 180;
+  const h = 50.6 * 9 / 16 / 2;   // half box height in cqw
+  return [cx + h * Math.sin(r), cy * 9 / 16 - h * Math.cos(r)];   // in cqw
+}
+const FLY_DELAY = FLY.map((_, i) => 0.25 + i * 0.32);
+const ZF = ["6d7fe20d322abbca3392c4aebedf05a9", "2b9a1276e02908503c42e4314e14ce87", "4fb8783fb2f04c767768c1df6edb86d8", "091ddcdea5f50109834641fa798f8396", "2460e9487cdf6fd81d479beda32f7fc5", "4fea69b816dec4b9daeedfefcd5d5c2e", "7d8a2ea7a7e1b2f7067943e7efe170ec"];
+const ZG = [[0.23175, 38.4053, 46.5574], [0.31095, 33.262, 40.4007], [0.38409, 30.7931, 34.5139], [0.41312, 29.3413, 32.8874], [0.54868, 22.5637, 28.6223], [0.64798, 17.5986, 23.6632], [1.0, 0.0, 0.0]];
+// main screen = 9-3; slider zooms 9-3 -> 9-5 (zp 0..2), then it continues on its own to 9-7 (zp 4)
+const ZF3 = ['b0322a68efb87ea66c70d4ba0c277413', 'd2c1dfb54dba4555394d40a686ff34a1', '95429fac9bd11da737fd97be027d69db', '70b4749231ebc0f2bef9ad320af1541d', '67423d4a55fb84b0dd782d9cc9f88af1'], ZG3 = ZG.slice(2);
+function charsStyle(zp) {
+  const p = Math.max(0, Math.min(4, zp)), i = Math.min(3, Math.floor(p)), f = p - i;
+  const inv = (g) => [1 / g[0], -g[1] / g[0], -g[2] / g[0]];
+  const A = inv(ZG3[i]), Bm = inv(ZG3[i + 1]);
+  const s = Math.exp(Math.log(A[0]) * (1 - f) + Math.log(Bm[0]) * f), tx = A[1] + (Bm[1] - A[1]) * f, ty = A[2] + (Bm[2] - A[2]) * f;
+  return `position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;transform:translate(${tx.toFixed(3)}cqw,${ty.toFixed(3)}cqh) scale(${s.toFixed(5)});transition:transform .12s linear;will-change:transform;pointer-events:none`;
+}
+function zoomStyles(zp) {
+  const p = Math.max(0, Math.min(4, zp)), i = Math.min(3, Math.floor(p)), f = p - i;
+  const inv = (g) => [1 / g[0], -g[1] / g[0], -g[2] / g[0]];
+  const A = inv(ZG3[i]), Bm = inv(ZG3[i + 1]);
+  const ef = f * f * (3 - 2 * f);
+  const s = Math.exp(Math.log(A[0]) * (1 - f) + Math.log(Bm[0]) * f), tx = A[1] + (Bm[1] - A[1]) * f, ty = A[2] + (Bm[2] - A[2]) * f;
+  return ZF3.map((id, j) => {
+    const g = ZG3[j], S = s * g[0], X = s * g[1] + tx, Y = s * g[2] + ty;
+    const o = j === i ? 1 - ef : j === i + 1 ? ef : 0;
+    return { src: '/_blob/' + id, alt: j === 4 && o > .5 ? '有時，把自己困在原地的，是太想把每件事都抓緊的執念。' : '', style: `position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;transform:translate(${X.toFixed(3)}cqw,${Y.toFixed(3)}cqh) scale(${S.toFixed(5)});opacity:${o.toFixed(3)};${o === 0 ? 'visibility:hidden;' : ''}transition:transform .12s linear,opacity .12s linear;will-change:transform,opacity` };
+  });
+}
+const END_CH = [["./assets/69d0c20af041adbc1e85a879e32de356.webp", 14.588, 8.933, 14.562, 26.8, "騰"], ["./assets/c49788cb8c9b6d9325da12b70bb6e216.webp", 29.125, 32.822, 8.8, 16.133, "出"], ["./assets/2d0fe207a7c32341a1ad4979019ae4ff.webp", 40.538, 36.311, 8.525, 6.756, "一"], ["./assets/31e420ae590bf182165f044a9f313b32.webp", 49.25, 14.622, 8.525, 15.778, "些"], ["./assets/12eec9401e76652d333130811e2d1ada.webp", 58.738, 22.0, 13.237, 22.889, "空"], ["./assets/5a44b2a4b680c5cc0bac7c1957d80585.webp", 72.788, 34.8, 12.6, 23.356, "間"], ["./assets/df3867326923e151b14e0f0643c64051.webp", 23.425, 59.422, 9.812, 17.733, "給"], ["./assets/131616fc2dd07814d032b0c77084472f.webp", 37.988, 50.689, 12.312, 24.022, "自"], ["./assets/ee6a4615036cae9a31e2c3eaceaa2d77.webp", 58.712, 67.511, 13.062, 23.511, "己"]];
+function frameOpacities(phase, v, t, done) {
+  const o = new Array(10).fill(0);
+  const scrub = (from, n, x) => { const p = x * (n - 1); const i = Math.min(n - 2, Math.floor(p)); const f = p - i; o[from + i] = 1 - f; o[from + i + 1] = f; };
+  if (phase === 'A') scrub(0, 3, v);
+  else if (done) o[9] = 1;
+  else scrub(3, 6, t);
+  return o;
+}
+
+// ===== 互動體驗 9（新版圖檔）=====
+const ZFN = ["7322b1af7d7c9a7423e365926f02a641", "faa312e1c3ce28a0346cc15bdcd82a82", "46266940de353a4be9e936f44135660a", "d19d439dc5e2e30f8ceb3b2ffa5280b2", "dc5b4a05ae453bb14269124d9a1db864", "2edd32cc2786db3d4037285855105288", "4d983829e81b220374f576c8306a1b61", "87af064a4454f4b93b090dabd6a0ffdd"];
+const ZGN = [[0.19684, 64.5288, 53.9261], [0.24715, 62.0138, 51.4074], [0.28675, 60.0278, 46.0866], [0.3184, 58.4464, 44.5022], [0.4273, 53.0042, 40.7672], [0.50678, 45.8633, 36.839], [0.61964, 35.7251, 31.1994], [1.0, 0.0, 0.0]];
+const RGN = [[-0.2829, -0.4931, 1.2879, 1.4674], [-0.1236, -0.2908, 1.1275, 1.2706], [-0.0372, -0.0651, 1.0411, 1.2807], [0.0161, -0.0089, 0.9872, 1.2031], [0.1394, 0.0808, 0.863, 0.9839], [0.2584, 0.1456, 0.8686, 0.9071], [0.375, 0.2101, 0.874, 0.8329], [0.5896, 0.4422, 0.8988, 0.8281]];
+const KNOB = [37.15, 41.37, 45.56, 49.96, 54.30, 57.33, 58.89, 62.74];
+const LOOSE = [["6c044aa7b3ebe1327b81ff23bec3c558", 40.583, 30.37, 8.583, 15.037], ["32073918e7d0956b70f56986e34189af", 19.542, 39.481, 8.083, 15.259], ["7ff561c1552c41a98662afd92faddbfd", 46.0, 46.519, 13.042, 22.37], ["12ef728d9a32e740e8803c17f24f6859", 26.667, 51.778, 7.208, 12.519], ["1825b5e8cf5a7f39dacc5894d552f9cc", 10.042, 60.074, 8.75, 16.667], ["09813236840b6dd6ac24305b1041d066", 33.958, 71.185, 13.792, 26.741], ["27cc2229d88660f6336e0f2df9d3743d", 16.458, 81.111, 10.75, 18.889]];
+const ENDC = [["57533add0f2f4f2d7cd66b5a42bb251c", 15.333, 6.593, 11.667, 21.778, "騰"], ["a4a3d5e856810412d1e5bae836798cd8", 17.042, 29.407, 8.25, 14.815, "出"], ["cd50571c0cdef19bccc87f24f171af63", 16.333, 45.259, 9.667, 8.444, "一"], ["b978a6b5fc9e29a9dd346db5d09e27cc", 17.0, 54.815, 8.375, 14.667, "些"], ["3720dc00b9eacdb586307cbe2ce4e41d", 14.083, 70.519, 14.167, 25.333, "空"], ["e58ce00e430e34b6d32fae68d4477cb5", 29.958, 70.667, 13.5, 25.037, "間"], ["042800395007c39bd9edb26ed3cda054", 45.458, 75.556, 9.292, 16.593, "給"], ["a0b48e98b9bc7c88576b8117c8185a9b", 55.5, 75.556, 9.708, 18.741, "自"], ["21abce0cab826948775bc8e8f1b9c77e", 65.958, 75.111, 11.167, 19.704, "己"]];
+const BTN14 = [80.917, 76.815, 9.125, 16.296];
+const SQ = [["77affbd5e4cb8f0fa4e4b85a72dfd666", 0.04866, 0.08653, 0.3602, 0.34562], ["e8d83004b6f8b53dd7390cf94f8f6a21", 0.73929, 0.71531, 0.21242, 0.27291], ["004529fe8025e136b0f2ee186fddf544", 0.05301, 0.35637, 0.24038, 0.44188], ["310e25ec98d28997eeb37243af3ce1a8", 0.27451, 0.09114, 0.20552, 0.16334], ["755273c5aebf8b56313a9dc3a933d5ad", 0.20588, 0.51306, 0.2785, 0.26626], ["8285925ea4ae18ef024416821d91b945", 0.26616, 0.23451, 0.40015, 0.31746], ["14998dc572804899fb5e6d235086e835", 0.47023, 0.08602, 0.2854, 0.27445]];
+const RPF = [["33b66145b79995d087ef868bc4858d49", 0.82339, 0.30939, 0.20116, 0.19252, -10.645], ["8b049f4622939554bc0ddd581bb190f8", 0.84874, 0.67393, 0.25272, 0.38095, -9.581], ["1f169baf2716f76787b140986d556b6d", 0.59105, 0.23477, 0.19099, 0.28674, -7.686], ["c2eee6fca4114cadf9d4b155cdae4bdd", 0.61536, 0.52063, 0.23239, 0.33794, -9.396], ["31a435ab6671731df5f2094e7834411b", 0.42333, 0.43192, 0.21133, 0.3277, -0.963], ["722c358cbe395b0ed6d2f2a5c7d8ac55", 0.64356, 0.87591, 0.20261, 0.28981, -4.207], ["bf0a80fdb3b52d9463681f9d36986293", 0.22672, 0.25678, 0.22658, 0.45366, -1.455], ["95ac2302df004a81441e7eeae9e410d2", 0.47702, 0.75477, 0.29049, 0.26933, -2.862], ["3a09706b95d02814f753766f27196030", 0.18249, 0.55336, 0.24183, 0.37071, -0.264], ["2cf32e2627ccdbf42efc7c7edd246d07", 0.24507, 0.85949, 0.23094, 0.39734, -1.237]];
+const REST98 = './assets/9b886c49d0a6638bad17c770341636f1.webp';
+const BOXR = [57.1667, 40.4444, 34.4167, 43.4074];
+const ZFX = [ZGN[0][1] / (1 - ZGN[0][0]), ZGN[0][2] / (1 - ZGN[0][0])], ZLMAX = -Math.log(ZGN[0][0]), ZLS = ZGN.map((g) => Math.log(g[0]));
+function camK(zp) { return Math.exp(ZLMAX * (1 - Math.max(0, Math.min(1, zp / 7)))); }
+function camT(zp) { const k = camK(zp); return k === 1 ? 'none' : `translate(${(ZFX[0] * (1 - k)).toFixed(3)}cqw, ${(ZFX[1] * (1 - k)).toFixed(3)}cqh) scale(${k.toFixed(5)})`; }
+function zpFromKnob(y) { return Math.max(0, Math.min(7, (y - KNOB[0]) / (KNOB[7] - KNOB[0]) * 7)); }
+function knobFromZp(zp) { return KNOB[0] + (KNOB[7] - KNOB[0]) * Math.max(0, Math.min(7, zp)) / 7; }
+function zoomLayer(zp, parity) {
+  const q = Math.max(0, Math.min(1, zp / 7)), L = ZLMAX * (1 - q), k = Math.exp(L), need = -L;
+  let i = 0; while (i < 6 && ZLS[i + 1] <= need) i++;
+  let f = (need - ZLS[i]) / (ZLS[i + 1] - ZLS[i]); f = Math.max(0, Math.min(1, f));
+  const j = (i % 2 === parity) ? i : i + 1, g = ZGN[j], S = k * g[0], X = k * g[1] + ZFX[0] * (1 - k), Y = k * g[2] + ZFX[1] * (1 - k);
+  const ef = f * f * (3 - 2 * f), o = j === i ? 1 - ef : ef;
+  return { j, src: '/_blob/' + ZFN[j], region: RGN[j], style: `position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;transform:translate(${X.toFixed(3)}cqw,${Y.toFixed(3)}cqh) scale(${S.toFixed(5)});opacity:${o.toFixed(3)};will-change:transform,opacity;pointer-events:none;display:block` };
+}
+
+var JELLY_B = [[0.126,0.161,0.24,0.0],[0.599,0.541,0.25,0.6],[0.527,0.854,0.22,1.2],[0.869,0.525,0.24,1.8],[0.359,0.609,0.22,2.4],[0.689,0.144,0.22,3.0],[0.090,0.829,0.22,3.6],[0.911,0.880,0.21,4.2],[0.096,0.508,0.22,4.8],[0.467,0.321,0.24,5.4]];
+var JELLY_FS = 'precision highp float;varying vec2 v;uniform sampler2D T;uniform float t;uniform float asp;uniform vec4 R;uniform float W;uniform vec4 B[10];' +
+  'float env(float x){if(x<0.0||x>2.8)return 0.0;if(x<0.45)return sin(x/0.45*1.5708);float y=x-0.45;return exp(-y*1.7)*cos(y*6.6);}' +
+  'void main(){vec2 uv=v;vec2 q=(uv-R.xy)/R.zw;float aq=asp*R.z/R.w;vec2 off=vec2(0.0);' +
+  'for(int i=0;i<10;i++){vec4 b=B[i];float a=env(mod(t-b.w,6.0));vec2 d=(q-b.xy)*vec2(aq,1.0);float rr=length(d)/b.z;float w=rr<1.0?(1.0-rr*rr)*(1.0-rr*rr):0.0;off-=(q-b.xy)*a*0.46*w;}' +
+  'off+=0.006*vec2(sin(q.y*8.0+t*1.3)+sin(q.x*5.0-t*0.8),cos(q.x*7.0+t*1.0)+sin(q.y*6.0+t*1.4));' +
+  'float win=W>0.5?smoothstep(0.0,0.06,q.x)*smoothstep(1.0,0.94,q.x)*smoothstep(0.0,0.06,q.y)*smoothstep(1.0,0.94,q.y):1.0;' +
+  'uv+=off*R.zw*win;vec4 c=texture2D(T,uv);float inb=step(0.0,uv.x)*step(uv.x,1.0)*step(0.0,uv.y)*step(uv.y,1.0);gl_FragColor=c*inb;}';
+var JELLY_VS = 'attribute vec2 p;varying vec2 v;void main(){v=vec2(p.x*0.5+0.5,0.5-p.y*0.5);gl_Position=vec4(p,0.0,1.0);}';
+var JELLY_ALL = [], JELLY_RAF = 0, JELLY_T0 = performance.now();
+function jellyLoop(now) {
+  JELLY_RAF = JELLY_ALL.length ? requestAnimationFrame(jellyLoop) : 0;
+  for (var i = 0; i < JELLY_ALL.length; i++) { try { JELLY_ALL[i].frame(now); } catch (e) {} }
+}
+function jellyGL(getCanvas, getSrc, region, win, onReady, resMul) {
+  var cv = null, gl = null, U = {}, tex = null, curSrc = null, imgs = {}, okSent = null;
+  var calm = window.matchMedia ? matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
+  function report(ok) { if (okSent !== ok) { okSent = ok; if (onReady) onReady(ok); } }
+  function release() { if (gl) { var x = gl.getExtension('WEBGL_lose_context'); if (x) x.loseContext(); } gl = null; cv = null; curSrc = null; }
+  function setup(c) {
+    release(); cv = c;
+    gl = c.getContext('webgl', { premultipliedAlpha: true, alpha: true, antialias: false });
+    if (!gl) return false;
+    function sh(k, s) { var o = gl.createShader(k); gl.shaderSource(o, s); gl.compileShader(o); return o; }
+    var prog = gl.createProgram(); gl.attachShader(prog, sh(gl.VERTEX_SHADER, JELLY_VS)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, JELLY_FS)); gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { gl = null; return false; }
+    gl.useProgram(prog);
+    var buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+    var lp = gl.getAttribLocation(prog, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
+    ['T', 't', 'asp', 'B', 'R', 'W'].forEach(function (n) { U[n] = gl.getUniformLocation(prog, n); });
+    var flat = []; JELLY_B.forEach(function (b) { flat.push(b[0], b[1], b[2], b[3]); });
+    gl.uniform4fv(U.B, new Float32Array(flat)); gl.uniform1i(U.T, 0);
+    gl.uniform1f(U.W, win ? 1 : 0);
+    tex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+    return true;
+  }
+  var comp = { key: null, cv: null };
+  function one(src) {
+    if (!imgs[src]) { var im = new Image(); im.decoding = 'async'; im.src = src; imgs[src] = im; }
+    return imgs[src];
+  }
+  function image(src) {
+    if (typeof src === 'string') return one(src);
+    var key = src.map(function (l) { return l.u; }).join('|');
+    if (comp.key === key) return comp.cv;
+    var ls = src.map(function (l) { return one(l.u); });
+    for (var i = 0; i < ls.length; i++) if (!ls[i].complete || !ls[i].naturalWidth) return { complete: false };
+    var W = ls[0].naturalWidth, H = ls[0].naturalHeight, c2 = comp.cv && comp.cv.width === W ? comp.cv : document.createElement('canvas');
+    c2.width = W; c2.height = H; var g = c2.getContext('2d'); g.clearRect(0, 0, W, H);
+    src.forEach(function (l, i) { g.drawImage(ls[i], l.x * W, l.y * H, l.w * W, l.h * H); });
+    c2.complete = true; c2.naturalWidth = W; comp.key = key; comp.cv = c2; return c2;
+  }
+  var api = {
+    frame: function (now) {
+      var c = getCanvas();
+      if (!c) { if (cv) release(); try { image(getSrc()); } catch (e) {} return; }
+      var src = getSrc(), im = image(src), skey = typeof src === 'string' ? src : src.map(function (l) { return l.u; }).join('|');
+      if (!im.complete || !im.naturalWidth) return;
+      if (c !== cv || (gl && gl.isContextLost())) { if (!setup(c)) { report(false); return; } }
+      if (!gl) return;
+      if (curSrc !== skey) { gl.bindTexture(gl.TEXTURE_2D, tex); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, im); curSrc = skey; }
+      if (!c.clientWidth || !c.clientHeight) return;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2) * (resMul ? resMul() : 1), w = Math.round(c.clientWidth * dpr), h = Math.round(c.clientHeight * dpr), cap = 4096 / Math.max(w, h, 1);
+      if (cap < 1) { w = Math.round(w * cap); h = Math.round(h * cap); }
+      if (c.width !== w || c.height !== h) { c.width = w; c.height = h; }
+      gl.viewport(0, 0, w, h); gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
+      var RR = typeof region === 'function' ? region() : region; gl.uniform4f(U.R, RR[0], RR[1], RR[2] - RR[0], RR[3] - RR[1]);
+      gl.uniform1f(U.t, calm.matches ? 0 : (now - JELLY_T0) / 1000); gl.uniform1f(U.asp, c.clientWidth / c.clientHeight);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+      report(true);
+    },
+    stop: function () { var i = JELLY_ALL.indexOf(api); if (i >= 0) JELLY_ALL.splice(i, 1); release(); }
+  };
+  JELLY_ALL.push(api);
+  if (!JELLY_RAF) JELLY_RAF = requestAnimationFrame(jellyLoop);
+  return api;
+}
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    ['cvBox'].forEach((k) => { this[k] = React.createRef(); });
+    this.state = { screen: 'intro', name: '', q: '', cat: 9, v: 0, t: 0, phase: 'A', done: false, aboutOpen: false, pickN: 0, hoverBeads: false, nameErr: false, fan: 4.5, veil: false, veilColor: '#0000FF', chip: -1, cStep: 0, lidGrab: false, hinting: false, zp: 0, zoomIn: null, zoomFade: false, fp: 0, g2: false, g3: false };
+  }
+  componentDidMount() {
+    this._pre = [];
+    setTimeout(() => {
+      const ids = ['9b886c49d0a6638bad17c770341636f1', 'd529e2b8640392cc2fc50c728d30be0e', '746ea3f04adea5babfc98b9357d22392', '899fc7fbcd3673df96edffeb0e543f9f', 'da052bcfa837b7f19a2e8181c8bd156e', 'a5fbe1532aa06929d6fccb1a4068f8a4', 'b8cfcf1e78f843733e4442d608b6ecfc', '0744b6d2adfd853408c0bf7681763a50', '3d88449802f22e563bd8d3ec8eb2d37a', 'c4f4469570e2575336e53745b12c7cbf', 'ee2e03b72b6fd0acbdfd130ee5924a6a', '7322b1af7d7c9a7423e365926f02a641']
+        .concat(SQ.map((q) => q[0]), LOOSE.map((q) => q[0]), ENDC.map((q) => q[0]));
+      ids.forEach((id) => { const im = new Image(); im.decoding = 'async'; im.src = '/_blob/' + id; if (im.decode) im.decode().catch(() => {}); this._pre.push(im); });
+    }, 1200);
+    const flag = (k) => (ok) => { if (this.state[k] !== ok) this.setState({ [k]: ok }); };
+    this._jellies = [
+      jellyGL(() => (this.state.screen === 'interact' && performance.now() > (this._ixT || 0) ? this.cvBox.current : null), () => { const g = this.state.gone || 0; return [{ u: REST98, x: 0, y: 0, w: 1, h: 1 }].concat(SQ.filter((q, k) => !((g >> k) & 1)).map((q) => ({ u: '/_blob/' + q[0], x: q[1], y: q[2], w: q[3], h: q[4] }))); }, [0.049, 0.087, 0.951, 0.987], true, flag('jglBox'), () => (this.state.phase === 'A' ? camK(this.state.zp) : 1))
+    ];
+  }
+  goTo(screen, extra) {
+    const white = screen === 'sutra' || screen === 'fortune';
+    clearTimeout(this._vt); clearTimeout(this._vt2);
+    this.setState({ veil: true, veilColor: white ? '#FFFFFF' : '#0000FF', aboutOpen: false });
+    this._vt = setTimeout(() => { this.setState({ screen, ...(extra || {}) }); this._vt2 = setTimeout(() => this.setState({ veil: false }), 60); }, 430);
+  }
+  animTo(key, target, done) {
+    clearInterval(this._an);
+    this._an = setInterval(() => {
+      const cur = this.state[key], nx = cur + Math.sign(target - cur) * Math.max(0.5, Math.abs(target - cur) * 0.085);
+      if (Math.abs(target - nx) < 0.7) { clearInterval(this._an); this.setState({ [key]: target }); if (done) done(); }
+      else this.setState({ [key]: nx });
+    }, 16);
+  }
+  resetInteract() {
+    this._ixT = performance.now() + 900;
+    (this._ct || []).forEach(clearTimeout); this._ct = []; clearTimeout(this._hb3); clearTimeout(this._ph); this._zlock = false; this._sd = null; this._bd = null;
+    return { zp: 0, phase: 'A', u: 0, boxTr: 'none', cStep: 0, hinting: false, boxGrab: false, done: false, lid: 0, fly: false, gone: 0, tip: 0, rp: 0 };
+  }
+  setZp(zp) {
+    if (this._zlock) return;
+    zp = Math.max(0, Math.min(7, zp));
+    this.setState({ zp });
+    if (zp >= 6.999) { this._zlock = true; this._sd = null; clearTimeout(this._ph); this._ph = setTimeout(() => this.startB(), 3200); }
+  }
+  startB() {
+    this.setState({ phase: 'B', hinting: true, u: 0, boxTr: 'none' });
+    clearTimeout(this._hb3); this._hb3 = setTimeout(() => this.setState({ hinting: false }), 2850);
+  }
+  pour(vel) {
+    if (this.state.phase !== 'B') return;
+    this._bd = null;
+    const u = this.state.u, dur = Math.max(0.14, Math.min(0.45, (1 - u) / Math.max(vel || 0, 1.4)));
+    (this._ct || []).forEach(clearTimeout); this._ct = [];
+    this.setState({ phase: 'C', cStep: 0, u: 1, boxGrab: false, lid: 0, fly: false, gone: 0, tip: 0, rp: 0, boxTr: `transform ${dur.toFixed(2)}s cubic-bezier(.2,.9,.3,1.18), opacity .7s ease` });
+    const at = (ms, st) => this._ct.push(setTimeout(() => this.setState(st), ms));
+    const t0 = Math.round(dur * 1000) + 120, t1 = t0 + 900;
+    at(t0, { lid: 1 }); at(t1, { fly: true });
+    for (let k = 0; k < 7; k++) at(t1 + Math.round((0.14 + k * 0.085) * 1000), { gone: (1 << (k + 1)) - 1 });
+    at(t1 + 750, { rp: 1 });
+    at(t1 + 1350, { tip: 1, boxTr: 'transform 1.05s cubic-bezier(.5,0,.72,1.28), opacity 1.1s ease' });
+    at(t1 + 2950, { cStep: 1 }); at(t1 + 4400, { cStep: 2 }); at(t1 + 4700, { cStep: 3 }); at(t1 + 7100, { cStep: 4 }); at(t1 + 10100, { cStep: 5 });
+  }
+  componentWillUnmount() { (this._jellies || []).forEach((j) => j.stop()); clearTimeout(this._hb3); clearInterval(this._zi); clearTimeout(this._zt1); clearTimeout(this._zt2); (this._ct || []).forEach(clearTimeout); clearTimeout(this._tm); clearTimeout(this._ph); clearTimeout(this._vt); clearTimeout(this._vt2); clearInterval(this._an); }
+
+  renderVals() {
+    const s = this.state;
+    const cur0 = CATS[s.cat - 1];
+    const cur = { ...cur0, goldBreak: brk(cur0.gold), card: CARDS[cur0.n] };
+    const go = (screen, extra) => this.goTo(screen, extra);
+    const submitName = () => { if (!s.name.trim()) { this.setState({ nameErr: true }); return; } go('question', { nameErr: false }); };
+    const submitQ = (pre) => {
+      const q = (typeof pre === 'string' ? pre : (s.q || '')).trim() || '如何接受自己的平庸？';
+      go('search', Object.assign(this.resetInteract(), { q, cat: 9, v: 0, t: 0 }));
+      clearTimeout(this._tm);
+      this._tm = setTimeout(() => this.goTo('sutra'), 3000);
+    };
+    const pickChip = (i) => { this.setState({ chip: i, q: CHIPS[i] }); clearTimeout(this._cp); this._cp = setTimeout(() => { this.setState({ chip: -1 }); submitQ(CHIPS[i]); }, 520); };
+    const fr = frameOpacities(s.phase, s.v / 100, s.t / 100, s.done);
+    const frames = FRAMES.map((src, i) => ({ src, o: fr[i].toFixed(3), alt: fr[i] > 0.5 ? FRAME_ALT[i] : '', dur: (i === 3 || i === 9) ? '1s' : '.3s' }));
+    const curFrame = fr.indexOf(Math.max.apply(null, fr));
+    const nameLen = Math.max(1, (s.name || '').length);
+    const pickC = s.pickN ? CATS[s.pickN - 1] : CATS[0];
+    const pick = { ...pickC, num: pad(pickC.n), goldBreak: brk(pickC.gold), card: CARDS[pickC.n] };
+    const STEP = 6.2;
+    const fan = CATS.map((c, i) => {
+      const ang = (i - s.fan) * STEP;
+      return {
+        img: CARDS[c.n], aria: `籤詩 ${pad(c.n)}：${c.gold}`,
+        wrap: `position:absolute;left:calc(min(36vh,15vw) * -0.5);top:-2vh;width:min(36vh,15vw);aspect-ratio:640/1022;transform-origin:50% -90vw;transform:rotate(${ang.toFixed(2)}deg);transition:transform .6s cubic-bezier(.3,.7,.2,1);z-index:${20 - Math.round(Math.abs(i - s.fan))}`,
+        pick: () => this.setState({ pickN: c.n })
+      };
+    });
+    const setFan = (f) => this.setState({ fan: Math.max(0, Math.min(9, f)) });
+    return {
+      bg: s.screen === 'sutra' || s.screen === 'fortune' ? '#FFFFFF' : '#0000FF',
+      isIntro: s.screen === 'intro',
+      showBlue: ['name', 'question', 'search'].indexOf(s.screen) >= 0,
+      isName: s.screen === 'name', isQuestion: s.screen === 'question', isSearch: s.screen === 'search',
+      isSutra: s.screen === 'sutra', isInteract: s.screen === 'interact', isFortune: s.screen === 'fortune', isList: s.screen === 'list',
+      skipIntro: () => { go('name'); clearTimeout(this._ab); this._ab = setTimeout(() => this.setState({ aboutOpen: true }), 650); },
+      mqTiles: [1, 2, 3, 4, 5, 6, 7, 8], nameTiles: NAME_TILES, askTiles: ASK_TILES, nameImgs: NAME_B.imgs, namePink: NAME_PINK, askRing: ASK_RING, askImgs: ASK_B.imgs, beads: BEADS, pieces: PIECE_TILES,
+      veilColor: s.veilColor, veilOp: s.veil ? 1 : 0,
+      name: s.name, q: s.q, cur,
+      nameInBg: s.name ? '#FFFFFF' : 'transparent', qInBg: s.q ? '#FFFFFF' : 'transparent',
+      nameRing2: s.nameErr ? '0 0 0 .25cqw #FA8CC2' : '0 0 0 0 transparent',
+      onName: (e) => this.setState({ name: e.target.value, nameErr: false }),
+      nameKey: (e) => { if (e.key === 'Enter') submitName(); },
+      submitName,
+      onQ: (e) => this.setState({ q: e.target.value }),
+      qKey: (e) => { if (e.key === 'Enter') submitQ(); },
+      submitQ: () => submitQ(),
+      chipPick0: () => pickChip(0), chipPick1: () => pickChip(1), chipPick2: () => pickChip(2), chipPick3: () => pickChip(3), chipPick4: () => pickChip(4),
+      chipPick0Cls: s.chip === 0 ? 'on' : '', chipPick1Cls: s.chip === 1 ? 'on' : '', chipPick2Cls: s.chip === 2 ? 'on' : '', chipPick3Cls: s.chip === 3 ? 'on' : '', chipPick4Cls: s.chip === 4 ? 'on' : '',
+      nameFs: `${Math.min(4, 26 / (nameLen + 2)).toFixed(2)}cqw`,
+      vNameFs: `${Math.min(11.5, 34 / nameLen).toFixed(2)}cqw`,
+      foldScroll: (e) => { const el = e.currentTarget, max = Math.max(1, el.scrollHeight - el.clientHeight), p = el.scrollTop / max; this.setState({ fp: p, g2: this.state.g2 || p > 0.36, g3: this.state.g3 || p > 0.8 }); },
+      fold: (() => {
+        const p = s.fp, cl = (x) => Math.max(0, Math.min(1, x)), ez = (x) => x * x * (3 - 2 * x);
+        const u2 = ez(cl((p - 0.05) / 0.42)), u3 = ez(cl((p - 0.5) / 0.4));
+        const a2 = -180 * (1 - u2), a3 = -180 * (1 - u3), hk = 0.851 * (1 + u2 + u3), shown = p > 0.93;
+        return { a2: a2.toFixed(2), a3: a3.toFixed(2), s2: (0.9 * Math.abs(Math.sin(a2 * Math.PI / 180))).toFixed(3), s3: (0.9 * Math.abs(Math.sin(a3 * Math.PI / 180))).toFixed(3), o2: u2 > 0.003 ? 1 : 0, o3: u3 > 0.003 ? 1 : 0,
+          g2: s.g2 ? 'fxw on' : 'fxw', g3: s.g3 ? 'fxw on' : 'fxw', iconO: shown ? 1 : 0, iconY: shown ? '0' : '16px', iconPE: shown ? 'auto' : 'none',
+          headO: (1 - cl(p * 5)).toFixed(3), cam: `calc(-1 * max(0px, var(--cw) * ${hk.toFixed(4)} - 82vh))` };
+      })(),
+      notNine: s.cat !== 9, isNine: s.cat === 9,
+      hoverBeads: s.hoverBeads,
+      beadsOn: () => this.setState({ hoverBeads: true }), beadsOff: () => this.setState({ hoverBeads: false }),
+      goInteract: () => { go('interact', Object.assign(this.resetInteract(), { hoverBeads: false })); },
+      phaseA: s.phase === 'A', phaseB: s.phase === 'B', phaseC: s.phase === 'C', phaseBC: s.phase !== 'A',
+      ix: (() => {
+        const A = s.phase === 'A', B = s.phase === 'B', C = s.phase === 'C', st = s.cStep || 0, u = s.u || 0;
+        const cl = (x) => Math.max(0, Math.min(1, x));
+        const stage = (el) => el.getBoundingClientRect();
+        const flyers = [];
+        if (C && s.fly) LOOSE.forEach(([id, x, y, w, h], i) => {
+          const t = 0.28 + 0.07 * i, Lx = 54.6 + 20.2 * t, Ly = 59.4 - 49.5 * t, cx = x + w / 2, cy = y + h / 2;
+          const sx = Lx - cx, sy = Ly - cy, py = Math.min(sy, 0) - 12 - (i % 3) * 3, r = (i % 2 ? 1 : -1) * (28 + i * 6), d = 0.14 + i * 0.085;
+          const pos = `position:absolute;left:${x}%;top:${y}%;width:${w}%;height:${h}%;--dd:${(0.05 + i * 0.07).toFixed(2)}s;--dr:${i % 2 ? 18 : -22}deg`;
+          [0, 1, 2, 3].forEach((k) => {
+            const vars = `--du:1.55s;--d:${(d + k * 0.045).toFixed(3)}s;--sx:${sx.toFixed(2)}cqw;--sy:${sy.toFixed(2)}cqh;--py:${py.toFixed(2)}cqh;--r:${r}deg`;
+            flyers.push({ src: '/_blob/' + id, pos: pos + (k ? ';pointer-events:none' : ';z-index:3'), dropCls: st >= 2 ? 'flDrop' : '', tCls: k ? 'flT' : 'flM', tStyle: k ? `${vars};--to:${[0, .26, .13, .06][k]};filter:blur(${(k * 0.7).toFixed(1)}px)` : vars });
+          });
+        });
+        const endChars = ENDC.map(([id, x, y, w, h], i) => ({ src: '/_blob/' + id, pos: `position:absolute;left:${x}%;top:${y}%;width:${w}%;height:${h}%`, vars: `--d:${(0.45 + i * 0.16).toFixed(2)}s;--hx:${(i < 4 ? -4 : -6.5)}cqw;--h1:${(-5 + (i % 3) * 0.6).toFixed(1)}cqh;--h2:-1.6cqh;--r:${i % 2 ? 7 : -8}deg` }));
+        return {
+          cam: A ? camT(s.zp) : 'none', cvBox: this.cvBox, b98o: (A || !s.phase) ? 1 : 0, c98o: C && s.rp ? 0 : 1, c12o: 0, c98T: 'none', rps: RPF.map(([id, cx, cy, w, h, dx], k) => ({ src: '/_blob/' + id, cls: C && s.rp ? 'rpS' : 'rpH', xCls: C && s.tip ? 'rpX rpFall' : 'rpX', qCls: C && s.tip ? 'rpQ rpLand' : 'rpQ rpIdle', pos: `position:absolute;left:${((cx - w / 2) * 100).toFixed(3)}%;top:${((cy - h / 2) * 100).toFixed(3)}%;width:${(w * 100).toFixed(3)}%;height:${(h * 100).toFixed(3)}%;pointer-events:none;--p:${(1.6 + (k % 4) * 0.35).toFixed(2)}s;--o:${(-k * 0.37).toFixed(2)}s;--dx:${dx}cqw;--r:${[6, -5, 8, -7, 4, -6, 7, -4, 5, -8][k]}deg;--d:${(0.28 + Math.min(0.45, -dx * 0.06) + (k % 3) * 0.05).toFixed(2)}s` })), fallCls: C && s.tip ? 'boxFall' : '', bcCls: '', sqs: SQ.map((q, k) => ({ src: '/_blob/' + q[0], cls: ((s.gone || 0) >> k) & 1 ? 'sqGo' : 'sqHide', pos: `position:absolute;left:${(q[1] * 100).toFixed(3)}%;top:${(q[2] * 100).toFixed(3)}%;width:${(q[3] * 100).toFixed(3)}%;height:${(q[4] * 100).toFixed(3)}%;pointer-events:none` })),
+          knobTop: `${((knobFromZp(A ? s.zp : 7) - 30) / 40 * 100).toFixed(2)}%`, valNow: Math.round((A ? s.zp : 7) / 7 * 100),
+          sliderO: C ? 0 : 1, sliderPE: A ? 'auto' : 'none', mqO: A ? cl((s.zp - 6.2) / 0.8).toFixed(3) : (C && st >= 3 ? 0 : 1),
+          sDown: (e) => { if (this.state.phase !== 'A' || this._zlock) return; const r = stage(e.currentTarget); this._sd = r; try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {} this.setZp(zpFromKnob(30 + (e.clientY - r.top) / r.height * 40)); },
+          sMove: (e) => { const r = this._sd; if (!r) return; this.setZp(zpFromKnob(30 + (e.clientY - r.top) / r.height * 40)); },
+          sUp: () => { this._sd = null; },
+          sKey: (e) => { const k = e.key; if (k === 'ArrowDown' || k === 'PageDown' || k === 'ArrowRight') { e.preventDefault(); this.setZp(this.state.zp + 0.5); } else if (k === 'ArrowUp' || k === 'PageUp' || k === 'ArrowLeft') { e.preventDefault(); this.setZp(this.state.zp - 0.5); } else if (k === 'End') { e.preventDefault(); this.setZp(7); } },
+          showHands: B && s.hinting,
+          boxT: C && s.tip ? 'translate(-0.5cqw, -6.59cqh) rotate(-90deg)' : `translate(${(0.21 * u).toFixed(3)}cqw, ${(-14.74 * u).toFixed(3)}cqh) rotate(${(-54 * u).toFixed(2)}deg)`, boxTr: s.boxTr || 'none', boxO: 1,
+          boxVis: s.jglBox ? 'hidden' : 'visible', b13o: 0,
+          boxCursor: s.hinting ? 'default' : s.boxGrab ? 'grabbing' : 'grab',
+          boxDown: (e) => {
+            if (this.state.phase !== 'B' || this.state.hinting) return;
+            const r = stage(e.currentTarget), now = performance.now();
+            this._bd = { x: e.clientX, y: e.clientY, u0: this.state.u || 0, W: r.width / 0.76, lt: now, lu: this.state.u || 0, v: 0, mv: 0 };
+            try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {}
+            this.setState({ boxTr: 'none', boxGrab: true });
+          },
+          boxMove: (e) => {
+            const d = this._bd; if (!d) return;
+            const ddx = e.clientX - d.x, ddy = e.clientY - d.y; d.mv = Math.max(d.mv, Math.hypot(ddx, ddy));
+            const proj = (Math.max(0, -ddx) + Math.max(0, ddy) * 0.8 + Math.max(0, -ddy) * 0.35 - Math.max(0, ddx) * 0.6) / (d.W * 0.13), nu = Math.max(0, Math.min(1, d.u0 + proj)), now = performance.now(), dt = Math.max(1, now - d.lt);
+            d.v = d.v * 0.5 + ((nu - d.lu) / dt * 1000) * 0.5; d.lt = now; d.lu = nu;
+            this.setState({ u: nu });
+            if (nu >= 0.985) this.pour(d.v);
+          },
+          boxUp: () => {
+            const d = this._bd; if (!d) return; this._bd = null;
+            if (d.mv < 8) { this.pour(2.2); return; }
+            if ((this.state.u || 0) > 0.3 || d.v > 1.6) this.pour(d.v);
+            else this.setState({ u: 0, boxGrab: false, boxTr: 'transform .6s cubic-bezier(.3,1.7,.5,1)' });
+          },
+          boxKey: (e) => { if (this.state.hinting) return; if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.pour(2.5); } },
+          flyOn: C && s.fly, flyers, lidT2: 0, lidT: s.lid ? 'translate(62%, -230%) rotate(-9deg)' : 'none', lidTr: s.lid ? 'transform .85s cubic-bezier(.45,-0.35,.25,1.15)' : 'none', panY: C && st >= 3 ? '-200cqh' : '0cqh',
+          endOn: C && st >= 4, endChars, showDone: C && st >= 5,
+          btnL: BTN14[0] + '%', btnT: BTN14[1] + '%', btnW: BTN14[2] + '%', btnH: BTN14[3] + '%'
+        };
+      })(),
+      toFortune: () => go('fortune', { fp: 0, g2: false, g3: false }),
+      dlName: `金日事宜_籤詩${pad(s.cat)}.png`,
+      goHome: () => { clearTimeout(this._tm); go('name', Object.assign(this.resetInteract(), { q: '', v: 0, t: 0, pickN: 0 })); },
+      openList: () => go('list', { pickN: 0 }),
+      openAbout: () => this.setState({ aboutOpen: true }), closeAbout: () => this.setState({ aboutOpen: false }), aboutOpen: s.aboutOpen,
+      fan, fanPrev: () => setFan(s.fan - 1), fanNext: () => setFan(s.fan + 1),
+      wheel: (e) => { if (s.pickN) return; const d = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX; setFan(this.state.fan + d * 0.006); },
+      hasPick: s.pickN > 0, pick, pickIsNine: s.pickN === 9, pickNotNine: s.pickN !== 9,
+      closePick: () => this.setState({ pickN: 0 }),
+      goExperience: (e) => {
+        let x = 50, y = 50;
+        try { const r = e.currentTarget.getBoundingClientRect(); x = (r.left + r.width / 2) / window.innerWidth * 100; y = (r.top + r.height / 2) / window.innerHeight * 100; } catch (err) {}
+        clearTimeout(this._zt1); clearTimeout(this._zt2);
+        this.setState({ zoomIn: { x, y }, zoomFade: false });
+        this._zt1 = setTimeout(() => this.setState(Object.assign(this.resetInteract(), { screen: 'interact', pickN: 0, v: 0, t: 0, zoomFade: true })), 900);
+        this._zt2 = setTimeout(() => this.setState({ zoomIn: null, zoomFade: false }), 1600);
+      },
+      hasZoom: !!s.zoomIn, zoomCls: s.zoomFade ? 'zoomOut' : '', zoomOrigin: s.zoomIn ? `${s.zoomIn.x.toFixed(2)}% ${s.zoomIn.y.toFixed(2)}%` : '50% 50%'
+    };
+  }
+}
+</script>
+</body>
+</html>

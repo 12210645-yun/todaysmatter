@@ -1,0 +1,46 @@
+/* Design System — generated from tokens.json */
+:root, [data-theme="light"] {
+  --Maincolor: #0000ff;
+}
+@font-face {
+  font-family: "Gen Sen Rounded2TW B";
+  src: url("../_blob/dfe2809b67fad0995498dbe52b8f49fc") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gen Sen Rounded2TW EL";
+  src: url("../_blob/2e33ac4c8640081e66f54a4e7c102452") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gen Sen Rounded2TW H";
+  src: url("../_blob/8cb288e11631762eec826d839a966a30") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gen Sen Rounded2TW L";
+  src: url("../_blob/08e1ac14f2efa0aee3439f7ccb6e4f84") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gen Sen Rounded2TW M";
+  src: url("../_blob/98eaaa13d0243da1a7ce338f0a02d9bb") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gen Sen Rounded2TW R";
+  src: url("../_blob/d710e8a53eeac2be2382a0b0980a9b0e") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

@@ -813,7 +813,7 @@ class Component extends DCLogic {
   }
   componentDidMount() {
     this._pre = [];
-    // build the 3D rings only after GenSen has loaded, so glyphs never swap (and shift) while the ring is on screen
+    // build the white text on the 3D rings only after GenSen has loaded (the image rings show right away), so glyphs never swap (and shift) while the ring is on screen
     const fontsOk = () => { if (!this.state.fontsOk) this.setState({ fontsOk: true }); };
     const fs = typeof document !== 'undefined' && document.fonts;
     if (fs && fs.load) {
@@ -912,7 +912,7 @@ class Component extends DCLogic {
       isName: s.screen === 'name', isQuestion: s.screen === 'question', isSearch: s.screen === 'search',
       isSutra: s.screen === 'sutra', isInteract: s.screen === 'interact', isFortune: s.screen === 'fortune', isList: s.screen === 'list',
       skipIntro: () => go('name'),
-      mqTiles: [1, 2, 3, 4, 5, 6, 7, 8], nameTiles: s.fontsOk ? NAME_TILES : [], askTiles: s.fontsOk ? ASK_TILES : [], nameImgs: s.fontsOk ? NAME_B.imgs : [], namePink: s.fontsOk ? NAME_PINK : [], askRing: s.fontsOk ? ASK_RING : [], askImgs: s.fontsOk ? ASK_B.imgs : [], beads: BEADS, pieces: PIECE_TILES,
+      mqTiles: [1, 2, 3, 4, 5, 6, 7, 8], nameTiles: s.fontsOk ? NAME_TILES : [], askTiles: s.fontsOk ? ASK_TILES : [], nameImgs: NAME_B.imgs, namePink: NAME_PINK, askRing: ASK_RING, askImgs: ASK_B.imgs, beads: BEADS, pieces: PIECE_TILES,
       veilColor: s.veilColor, veilOp: s.veil ? 1 : 0,
       name: s.name, q: s.q, cur,
       nameInBg: s.name ? '#FFFFFF' : 'transparent', qInBg: s.q ? '#FFFFFF' : 'transparent',

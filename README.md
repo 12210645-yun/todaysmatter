@@ -20,7 +20,7 @@ Anything left out is listed below.
 ## Uploaded files
 
 Images, fonts and media uploaded to the design are written once each under
-`assets/` — 183 in this export — and the exported files refer to them there. A
+`assets/` — 235 in this export — and the exported files refer to them there. A
 reference a script puts together while the page runs (for example
 `"/_blob/" + id`) is not rewritten and does not load from this folder.
 
